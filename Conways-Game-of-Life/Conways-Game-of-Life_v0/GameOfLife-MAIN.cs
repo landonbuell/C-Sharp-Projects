@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Landon Buell
+ * Conways' Game of Life
+ * Main Executable
+ * 22 July 2020
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

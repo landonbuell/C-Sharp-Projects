@@ -21,6 +21,9 @@ namespace Conways_Game_of_Life_v0
             // Constructor Method
             InitializeComponent();
             hideSubMenus();
+            n_rows = 10;
+            n_cols = 10;
+            n_gens = 1;
         }
 
         private void hideSubMenus()
@@ -28,6 +31,7 @@ namespace Conways_Game_of_Life_v0
             // Hide All SubMenus upon start-up
             panelMenuSettings.Visible = false;
             panelSeedPresets.Visible = false;
+            panelRandomSeed.Visible = false;
             panelSaveLoad.Visible = false;
         }
 
@@ -52,28 +56,36 @@ namespace Conways_Game_of_Life_v0
             OpenClose(panelSeedPresets);
         }
 
-        private void btnLoadSettings_Click(object sender, EventArgs e)
+        private void btnRandomSeed_Click(object sender, EventArgs e)
         {
-            // Open or Close the Seed Presets menu
+            // Open or Close the Random Seed menu
+            OpenClose(panelRandomSeed);
+        }
+
+        private void btnSaveLoad_Click(object sender, EventArgs e)
+        {
+            // Open or Close the Save/Load menu
             OpenClose(panelSaveLoad);
         }
 
         private void btnSetRows_Click(object sender, EventArgs e)
         {
-            // Get Number of rows from Numeric Counter
+            // Get Number of Rows from numeric counter
             n_rows = Convert.ToInt32(numericNrows.Value);
         }
 
         private void btnSetCols_Click(object sender, EventArgs e)
         {
-            // Get Number of columns from Numeric Counter
+            // Get Number of Columns from numeric counter
             n_cols = Convert.ToInt32(numericNcols.Value);
         }
 
         private void btnSetGens_Click(object sender, EventArgs e)
         {
-            // Get Number of generations from Numeric Counter
+            // Get Number of generations from numeric counter
             n_gens = Convert.ToInt32(numericNgens.Value);
         }
+
+        
     }
 }

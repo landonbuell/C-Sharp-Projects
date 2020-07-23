@@ -20,11 +20,19 @@ namespace Conways_Game_of_Life_v0
         public int n_rows;
         public int n_cols;
         public int n_gens;
-        public bool[,] board;
+        public int livingCells;
+        public int currentGen;
+        public List<int> cellCountHistory;
+        public bool[,] grid;
 
-        public GameBoard (int rows,int cols,int gens,)
+        public GameBoard (int rows,int cols,int gens)
         {
             // Constructor for Game Board Object
+            n_rows = rows;
+            n_cols = cols;
+            n_gens = gens;
+
+            currentGen = 0;
         }
 
         public void runGame()
@@ -32,36 +40,37 @@ namespace Conways_Game_of_Life_v0
             // Run the game
         }
 
+       
 
     }
 
     public class Cell
     {
         public bool alive;
-        public int xloc;
-        public int yloc;
-        public int n_neighbors;
+        public int x;
+        public int y;
 
-        public Cell(bool live,int x,int y)
+        public Cell(bool live,int xloc,int yloc)
         {
             // Constructor for cell object
             alive = live;
-            xloc = x;
-            yloc = y;
+            x = xloc;
+            y = yloc;
         }
 
-        public int getLivingNeigbors(GameBoard board)
+        public int liveNeigbors(GameBoard gameboard)
         {
             // Check surrounding cells for life
             int life_cntr = 0;
             for (int i = -1; i < 2; i++)
             {
-                for (int j = -1; j < 2, j++)
+                for (int j = -1; j < 2; j++)
                 {
                     if (i == j)
                         continue;
-                    
-                    
+                    // This Cell = gameboard.rid[x, y];
+                    if (gameboard.grid[x + i, y + j] == true)
+                        life_cntr++;
                 }
             }
             return life_cntr;

@@ -23,7 +23,13 @@ namespace Conways_Game_of_Life_v0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 MainForm = new Form1();
+            Application.Run(MainForm);
+
+
+            
+
+            
         }
     }
 }

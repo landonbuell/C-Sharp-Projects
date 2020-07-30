@@ -18,6 +18,7 @@ namespace Multibody_Simulation_v0
         public string name;
         public List<Body> bodies;
         public double totalMass;
+        public double averageMass;
         public double[] centerOfMass;
         public double[] netVelocity;
 
@@ -94,6 +95,7 @@ namespace Multibody_Simulation_v0
             }
             // Set Attributes to System Object
             this.totalMass = _totalMass;
+            this.averageMass = totalMass / bodies.Count();
             this.centerOfMass = _centerOfMass;
             this.netVelocity = _netVelocity;
 

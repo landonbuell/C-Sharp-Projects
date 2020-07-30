@@ -28,9 +28,9 @@ namespace Multibody_Simulation_v0
     {
         // Class To hold error Messages
 
-        public static string GeneralError()
+        public static void GeneralError()
         {
-            return "You have Encoutered a General Error!";
+           
         }
     }
 

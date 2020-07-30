@@ -130,24 +130,58 @@ namespace Multibody_Simulation_v0
         }
 
         // HELP MENU BUTTONS
-
-
         private void btnHelpName_Click(object sender, EventArgs e)
         {
-            // Display Help Window for Name Attribute        
+            // Display Help Window for Name attribute      
             HelpMsgs.TextBoxEntryHelp(btnHelpName.Text, "string");
         }
 
         private void btnHelpMass_Click(object sender, EventArgs e)
         {
-            // Display Help Window for Mass Attribute           
+            // Display Help Window for Mass attribute        
             HelpMsgs.TextBoxEntryHelp(btnHelpMass.Text, "double");
         }
 
         private void btnHelpRadius_Click(object sender, EventArgs e)
         {
-            // Display Help Window for Radius Attribute           
+            // Display Help Window for Radius attribute           
             HelpMsgs.TextBoxEntryHelp(btnHelpRadius.Text, "double");
         }
-    }
+
+        private void btnHelpPosX_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for X-position attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpPosX.Text, "double");
+        }
+
+        private void btnHelpPosY_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for Y-position attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpPosY.Text, "double");
+        }
+
+        private void btnHelpPosZ_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for Z-position attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpPosZ.Text, "double");
+        }
+
+        private void btnHelpVelX_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for X-velocity attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpVelX.Text, "double");
+        }
+
+        private void btnHelpVelY_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for Y-velocity attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpVelY.Text, "double");
+        }
+
+        private void btnHelpVelZ_Click(object sender, EventArgs e)
+        {
+            // Display Help Windows for Z-velocity attribute
+            HelpMsgs.TextBoxEntryHelp(btnHelpVelZ.Text, "double");
+        }
+    } 
 }

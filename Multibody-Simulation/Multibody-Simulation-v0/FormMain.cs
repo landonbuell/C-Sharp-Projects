@@ -32,24 +32,29 @@ namespace Multibody_Simulation_v0
 
         private void RefreshSystemDetails()
         {
-
+            // Gather System Details Attrb and Display in Menu
+            var data = MultibodySystem.__getSystemDetails__();
         }
 
         private void InitSubMenus()
         {
             // Close All Submenu Objects
-            panelSystemDetails.Visible = false;
-            panelUnitSystems.Visible = false;
+            panelMenuSystemDetails.Visible = false;
+            panelMenuUnitSystems.Visible = false;
+            panelMenuSaveLoad.Visible = false;
             panelMenuAddBody.Visible = false;
+
         }
 
         private void CloseSubMenus()
         {
             // Close all open submenu objects
-            if (panelSystemDetails.Visible == true)
-                panelSystemDetails.Visible = false;
-            if (panelUnitSystems.Visible == true)
-                panelUnitSystems.Visible = false;
+            if (panelMenuSystemDetails.Visible == true)
+                panelMenuSystemDetails.Visible = false;
+            if (panelMenuUnitSystems.Visible == true)
+                panelMenuUnitSystems.Visible = false;
+            if (panelMenuSaveLoad.Visible == true)
+                panelMenuSaveLoad.Visible = false;
             if (panelMenuAddBody.Visible == true)
                 panelMenuAddBody.Visible = false;
         }
@@ -66,13 +71,19 @@ namespace Multibody_Simulation_v0
         private void btnSystemDetails_Click(object sender, EventArgs e)
         {
             // Show System Details Submenu
-            ShowSubMenu(panelSystemDetails);
+            ShowSubMenu(panelMenuSystemDetails);
         }
 
         private void btnUnitSystems_Click(object sender, EventArgs e)
         {
             // Show Unit Systems Submenu
-            ShowSubMenu(panelUnitSystems);
+            ShowSubMenu(panelMenuUnitSystems);
+        }
+
+        private void btnSaveLoad_Click(object sender, EventArgs e)
+        {
+            // Show Save/Load Submenu
+            ShowSubMenu(panelMenuSaveLoad);
         }
 
         private void btnShowAdd_Click(object sender, EventArgs e)
@@ -82,6 +93,13 @@ namespace Multibody_Simulation_v0
         }
 
         private void btnAddBodyObj_Click(object sender, EventArgs e)
+        {
+            // Add Body to System list
+            AddBody();
+            // Update System Details
+        }
+
+        private void AddBody()
         {
             // Parse Form and Add Body to System
             double[] _pos = new double[3];
@@ -111,6 +129,25 @@ namespace Multibody_Simulation_v0
             }
         }
 
- 
+        // HELP MENU BUTTONS
+
+
+        private void btnHelpName_Click(object sender, EventArgs e)
+        {
+            // Display Help Window for Name Attribute        
+            HelpMsgs.TextBoxEntryHelp(btnHelpName.Text, "string");
+        }
+
+        private void btnHelpMass_Click(object sender, EventArgs e)
+        {
+            // Display Help Window for Mass Attribute           
+            HelpMsgs.TextBoxEntryHelp(btnHelpMass.Text, "double");
+        }
+
+        private void btnHelpRadius_Click(object sender, EventArgs e)
+        {
+            // Display Help Window for Radius Attribute           
+            HelpMsgs.TextBoxEntryHelp(btnHelpRadius.Text, "double");
+        }
     }
 }

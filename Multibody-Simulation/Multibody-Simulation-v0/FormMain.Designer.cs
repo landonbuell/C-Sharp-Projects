@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenuMain = new System.Windows.Forms.Panel();
-            this.panelUnitSystems = new System.Windows.Forms.Panel();
+            this.panelMenuUnitSystems = new System.Windows.Forms.Panel();
             this.radioSolarUnits = new System.Windows.Forms.RadioButton();
             this.radioAstroUnits = new System.Windows.Forms.RadioButton();
             this.radioNaturalUnits = new System.Windows.Forms.RadioButton();
             this.radioSiUnits = new System.Windows.Forms.RadioButton();
             this.btnUnitSystems = new System.Windows.Forms.Button();
-            this.panelSystemDetails = new System.Windows.Forms.Panel();
+            this.panelMenuSystemDetails = new System.Windows.Forms.Panel();
             this.btnSystemDetails = new System.Windows.Forms.Button();
             this.panelMainLogo = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
@@ -67,20 +67,24 @@
             this.panelTopRight = new System.Windows.Forms.Panel();
             this.panelTopCenter = new System.Windows.Forms.Panel();
             this.panelMainViewer = new System.Windows.Forms.Panel();
-            this.panelBottomCenter = new System.Windows.Forms.Panel();
-            this.multibodySystemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colVelZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVelY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVelX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRadius = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataMainViewer = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRadius = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPosX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPosY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPosZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVelX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVelY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVelZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelBottomCenter = new System.Windows.Forms.Panel();
+            this.btnSaveLoad = new System.Windows.Forms.Button();
+            this.panelMenuSaveLoad = new System.Windows.Forms.Panel();
+            this.btnSaveSystem = new System.Windows.Forms.Button();
+            this.multibodySystemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnLoadSystem = new System.Windows.Forms.Button();
             this.panelMenuMain.SuspendLayout();
-            this.panelUnitSystems.SuspendLayout();
+            this.panelMenuUnitSystems.SuspendLayout();
             this.panelMenuRight.SuspendLayout();
             this.panelMenuAddBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMenuAddBody)).BeginInit();
@@ -88,16 +92,19 @@
             this.splitMenuAddBody.Panel2.SuspendLayout();
             this.splitMenuAddBody.SuspendLayout();
             this.panelMainViewer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMainViewer)).BeginInit();
+            this.panelMenuSaveLoad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenuMain
             // 
             this.panelMenuMain.AutoScroll = true;
-            this.panelMenuMain.Controls.Add(this.panelUnitSystems);
+            this.panelMenuMain.Controls.Add(this.panelMenuSaveLoad);
+            this.panelMenuMain.Controls.Add(this.btnSaveLoad);
+            this.panelMenuMain.Controls.Add(this.panelMenuUnitSystems);
             this.panelMenuMain.Controls.Add(this.btnUnitSystems);
-            this.panelMenuMain.Controls.Add(this.panelSystemDetails);
+            this.panelMenuMain.Controls.Add(this.panelMenuSystemDetails);
             this.panelMenuMain.Controls.Add(this.btnSystemDetails);
             this.panelMenuMain.Controls.Add(this.panelMainLogo);
             this.panelMenuMain.Dock = System.Windows.Forms.DockStyle.Left;
@@ -106,18 +113,18 @@
             this.panelMenuMain.Size = new System.Drawing.Size(400, 1544);
             this.panelMenuMain.TabIndex = 0;
             // 
-            // panelUnitSystems
+            // panelMenuUnitSystems
             // 
-            this.panelUnitSystems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelUnitSystems.Controls.Add(this.radioSolarUnits);
-            this.panelUnitSystems.Controls.Add(this.radioAstroUnits);
-            this.panelUnitSystems.Controls.Add(this.radioNaturalUnits);
-            this.panelUnitSystems.Controls.Add(this.radioSiUnits);
-            this.panelUnitSystems.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUnitSystems.Location = new System.Drawing.Point(0, 820);
-            this.panelUnitSystems.Name = "panelUnitSystems";
-            this.panelUnitSystems.Size = new System.Drawing.Size(400, 200);
-            this.panelUnitSystems.TabIndex = 4;
+            this.panelMenuUnitSystems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelMenuUnitSystems.Controls.Add(this.radioSolarUnits);
+            this.panelMenuUnitSystems.Controls.Add(this.radioAstroUnits);
+            this.panelMenuUnitSystems.Controls.Add(this.radioNaturalUnits);
+            this.panelMenuUnitSystems.Controls.Add(this.radioSiUnits);
+            this.panelMenuUnitSystems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenuUnitSystems.Location = new System.Drawing.Point(0, 820);
+            this.panelMenuUnitSystems.Name = "panelMenuUnitSystems";
+            this.panelMenuUnitSystems.Size = new System.Drawing.Size(400, 200);
+            this.panelMenuUnitSystems.TabIndex = 4;
             // 
             // radioSolarUnits
             // 
@@ -191,13 +198,13 @@
             this.btnUnitSystems.UseVisualStyleBackColor = false;
             this.btnUnitSystems.Click += new System.EventHandler(this.btnUnitSystems_Click);
             // 
-            // panelSystemDetails
+            // panelMenuSystemDetails
             // 
-            this.panelSystemDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSystemDetails.Location = new System.Drawing.Point(0, 360);
-            this.panelSystemDetails.Name = "panelSystemDetails";
-            this.panelSystemDetails.Size = new System.Drawing.Size(400, 400);
-            this.panelSystemDetails.TabIndex = 2;
+            this.panelMenuSystemDetails.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenuSystemDetails.Location = new System.Drawing.Point(0, 360);
+            this.panelMenuSystemDetails.Name = "panelMenuSystemDetails";
+            this.panelMenuSystemDetails.Size = new System.Drawing.Size(400, 400);
+            this.panelMenuSystemDetails.TabIndex = 2;
             // 
             // btnSystemDetails
             // 
@@ -414,6 +421,7 @@
             this.btnHelpRadius.Text = "Radius";
             this.btnHelpRadius.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelpRadius.UseVisualStyleBackColor = false;
+            this.btnHelpRadius.Click += new System.EventHandler(this.btnHelpRadius_Click);
             // 
             // btnHelpMass
             // 
@@ -431,6 +439,7 @@
             this.btnHelpMass.Text = "Mass";
             this.btnHelpMass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelpMass.UseVisualStyleBackColor = false;
+            this.btnHelpMass.Click += new System.EventHandler(this.btnHelpMass_Click);
             // 
             // btnHelpName
             // 
@@ -448,6 +457,7 @@
             this.btnHelpName.Text = "Name";
             this.btnHelpName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelpName.UseVisualStyleBackColor = false;
+            this.btnHelpName.Click += new System.EventHandler(this.btnHelpName_Click);
             // 
             // btnAddAttrbHelp
             // 
@@ -626,84 +636,10 @@
             this.panelMainViewer.Size = new System.Drawing.Size(1178, 1344);
             this.panelMainViewer.TabIndex = 3;
             // 
-            // panelBottomCenter
-            // 
-            this.panelBottomCenter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomCenter.Location = new System.Drawing.Point(400, 1444);
-            this.panelBottomCenter.Name = "panelBottomCenter";
-            this.panelBottomCenter.Size = new System.Drawing.Size(1178, 100);
-            this.panelBottomCenter.TabIndex = 4;
-            // 
-            // multibodySystemBindingSource
-            // 
-            this.multibodySystemBindingSource.DataSource = typeof(Multibody_Simulation_v0.Multibody_System);
-            // 
-            // colVelZ
-            // 
-            this.colVelZ.HeaderText = "Z-Velocity";
-            this.colVelZ.MinimumWidth = 100;
-            this.colVelZ.Name = "colVelZ";
-            this.colVelZ.Width = 150;
-            // 
-            // colVelY
-            // 
-            this.colVelY.HeaderText = "Y-Velocity";
-            this.colVelY.MinimumWidth = 100;
-            this.colVelY.Name = "colVelY";
-            this.colVelY.Width = 150;
-            // 
-            // colVelX
-            // 
-            this.colVelX.HeaderText = "X-Velocity";
-            this.colVelX.MinimumWidth = 100;
-            this.colVelX.Name = "colVelX";
-            this.colVelX.Width = 150;
-            // 
-            // colPosZ
-            // 
-            this.colPosZ.HeaderText = "Z-Position";
-            this.colPosZ.MinimumWidth = 100;
-            this.colPosZ.Name = "colPosZ";
-            this.colPosZ.Width = 150;
-            // 
-            // colPosY
-            // 
-            this.colPosY.HeaderText = "Y-Position";
-            this.colPosY.MinimumWidth = 100;
-            this.colPosY.Name = "colPosY";
-            this.colPosY.Width = 150;
-            // 
-            // colPosX
-            // 
-            this.colPosX.HeaderText = "X-Position";
-            this.colPosX.MinimumWidth = 100;
-            this.colPosX.Name = "colPosX";
-            this.colPosX.Width = 150;
-            // 
-            // colRadius
-            // 
-            this.colRadius.HeaderText = "Radius";
-            this.colRadius.MinimumWidth = 100;
-            this.colRadius.Name = "colRadius";
-            this.colRadius.Width = 150;
-            // 
-            // colMass
-            // 
-            this.colMass.HeaderText = "Mass";
-            this.colMass.MinimumWidth = 100;
-            this.colMass.Name = "colMass";
-            this.colMass.Width = 150;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name";
-            this.colName.MinimumWidth = 120;
-            this.colName.Name = "colName";
-            this.colName.Width = 120;
-            // 
             // dataMainViewer
             // 
             this.dataMainViewer.AutoGenerateColumns = false;
+            this.dataMainViewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataMainViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataMainViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
@@ -719,10 +655,136 @@
             this.dataMainViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataMainViewer.Location = new System.Drawing.Point(0, 0);
             this.dataMainViewer.Name = "dataMainViewer";
-            this.dataMainViewer.RowHeadersWidth = 62;
+            this.dataMainViewer.RowHeadersWidth = 20;
             this.dataMainViewer.RowTemplate.Height = 28;
             this.dataMainViewer.Size = new System.Drawing.Size(1178, 1344);
             this.dataMainViewer.TabIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 120;
+            this.colName.Name = "colName";
+            // 
+            // colMass
+            // 
+            this.colMass.HeaderText = "Mass";
+            this.colMass.MinimumWidth = 100;
+            this.colMass.Name = "colMass";
+            // 
+            // colRadius
+            // 
+            this.colRadius.HeaderText = "Radius";
+            this.colRadius.MinimumWidth = 100;
+            this.colRadius.Name = "colRadius";
+            // 
+            // colPosX
+            // 
+            this.colPosX.HeaderText = "X-Position";
+            this.colPosX.MinimumWidth = 100;
+            this.colPosX.Name = "colPosX";
+            // 
+            // colPosY
+            // 
+            this.colPosY.HeaderText = "Y-Position";
+            this.colPosY.MinimumWidth = 100;
+            this.colPosY.Name = "colPosY";
+            // 
+            // colPosZ
+            // 
+            this.colPosZ.HeaderText = "Z-Position";
+            this.colPosZ.MinimumWidth = 100;
+            this.colPosZ.Name = "colPosZ";
+            // 
+            // colVelX
+            // 
+            this.colVelX.HeaderText = "X-Velocity";
+            this.colVelX.MinimumWidth = 100;
+            this.colVelX.Name = "colVelX";
+            // 
+            // colVelY
+            // 
+            this.colVelY.HeaderText = "Y-Velocity";
+            this.colVelY.MinimumWidth = 100;
+            this.colVelY.Name = "colVelY";
+            // 
+            // colVelZ
+            // 
+            this.colVelZ.HeaderText = "Z-Velocity";
+            this.colVelZ.MinimumWidth = 100;
+            this.colVelZ.Name = "colVelZ";
+            // 
+            // panelBottomCenter
+            // 
+            this.panelBottomCenter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottomCenter.Location = new System.Drawing.Point(400, 1444);
+            this.panelBottomCenter.Name = "panelBottomCenter";
+            this.panelBottomCenter.Size = new System.Drawing.Size(1178, 100);
+            this.panelBottomCenter.TabIndex = 4;
+            // 
+            // btnSaveLoad
+            // 
+            this.btnSaveLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSaveLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaveLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSaveLoad.Location = new System.Drawing.Point(0, 1020);
+            this.btnSaveLoad.Name = "btnSaveLoad";
+            this.btnSaveLoad.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSaveLoad.Size = new System.Drawing.Size(400, 60);
+            this.btnSaveLoad.TabIndex = 5;
+            this.btnSaveLoad.Text = "Save/Load Data";
+            this.btnSaveLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveLoad.UseVisualStyleBackColor = false;
+            this.btnSaveLoad.Click += new System.EventHandler(this.btnSaveLoad_Click);
+            // 
+            // panelMenuSaveLoad
+            // 
+            this.panelMenuSaveLoad.Controls.Add(this.btnLoadSystem);
+            this.panelMenuSaveLoad.Controls.Add(this.btnSaveSystem);
+            this.panelMenuSaveLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenuSaveLoad.Location = new System.Drawing.Point(0, 1080);
+            this.panelMenuSaveLoad.Name = "panelMenuSaveLoad";
+            this.panelMenuSaveLoad.Size = new System.Drawing.Size(400, 400);
+            this.panelMenuSaveLoad.TabIndex = 6;
+            // 
+            // btnSaveSystem
+            // 
+            this.btnSaveSystem.BackColor = System.Drawing.Color.Gray;
+            this.btnSaveSystem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaveSystem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSaveSystem.FlatAppearance.BorderSize = 0;
+            this.btnSaveSystem.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveSystem.Location = new System.Drawing.Point(0, 0);
+            this.btnSaveSystem.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSaveSystem.Name = "btnSaveSystem";
+            this.btnSaveSystem.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnSaveSystem.Size = new System.Drawing.Size(400, 50);
+            this.btnSaveSystem.TabIndex = 24;
+            this.btnSaveSystem.Text = "Save System";
+            this.btnSaveSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveSystem.UseVisualStyleBackColor = false;
+            // 
+            // multibodySystemBindingSource
+            // 
+            this.multibodySystemBindingSource.DataSource = typeof(Multibody_Simulation_v0.Multibody_System);
+            // 
+            // btnLoadSystem
+            // 
+            this.btnLoadSystem.BackColor = System.Drawing.Color.Gray;
+            this.btnLoadSystem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoadSystem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLoadSystem.FlatAppearance.BorderSize = 0;
+            this.btnLoadSystem.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadSystem.Location = new System.Drawing.Point(0, 50);
+            this.btnLoadSystem.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLoadSystem.Name = "btnLoadSystem";
+            this.btnLoadSystem.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnLoadSystem.Size = new System.Drawing.Size(400, 50);
+            this.btnLoadSystem.TabIndex = 25;
+            this.btnLoadSystem.Text = "Load System";
+            this.btnLoadSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoadSystem.UseVisualStyleBackColor = false;
             // 
             // FormMain
             // 
@@ -741,7 +803,7 @@
             this.Text = "Multibody Simulation";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMenuMain.ResumeLayout(false);
-            this.panelUnitSystems.ResumeLayout(false);
+            this.panelMenuUnitSystems.ResumeLayout(false);
             this.panelMenuRight.ResumeLayout(false);
             this.panelMenuAddBody.ResumeLayout(false);
             this.splitMenuAddBody.Panel1.ResumeLayout(false);
@@ -750,8 +812,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitMenuAddBody)).EndInit();
             this.splitMenuAddBody.ResumeLayout(false);
             this.panelMainViewer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMainViewer)).EndInit();
+            this.panelMenuSaveLoad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -761,8 +824,8 @@
         private System.Windows.Forms.Panel panelMenuMain;
         private System.Windows.Forms.Button btnSystemDetails;
         private System.Windows.Forms.Panel panelMainLogo;
-        private System.Windows.Forms.Panel panelSystemDetails;
-        private System.Windows.Forms.Panel panelUnitSystems;
+        private System.Windows.Forms.Panel panelMenuSystemDetails;
+        private System.Windows.Forms.Panel panelMenuUnitSystems;
         private System.Windows.Forms.Button btnUnitSystems;
         private System.Windows.Forms.Panel panelMenuRight;
         private System.Windows.Forms.RadioButton radioSolarUnits;
@@ -808,5 +871,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVelX;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVelY;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVelZ;
+        private System.Windows.Forms.Panel panelMenuSaveLoad;
+        private System.Windows.Forms.Button btnSaveSystem;
+        private System.Windows.Forms.Button btnSaveLoad;
+        private System.Windows.Forms.Button btnLoadSystem;
     }
 }

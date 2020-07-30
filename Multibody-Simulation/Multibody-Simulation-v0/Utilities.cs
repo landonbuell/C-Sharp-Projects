@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,30 @@ namespace Multibody_Simulation_v0
         public static string GeneralError()
         {
             return "You have Encoutered a General Error!";
+        }
+    }
+
+    class HelpMsgs
+    {
+        // Class to Hold Data for Help Messeges
+
+        public static void GeneralHelp(string _hdr, string _txt, string _ftr)
+        {
+            // General Help Form Messege
+            var helpForm = new FormHelp(_hdr,_txt,_ftr);
+            helpForm.Show();
+        }
+
+        public static void TextBoxEntryHelp (string _hdr, string _type )
+        {
+            // Help messege for Adding Attributes to new Body object
+            string hdr = "Help for " + _hdr.ToUpper() + " attribute";
+            string txt = "Enter a value for the " + _hdr.ToLower();
+            txt += " attribute for a new body object to add the system.\n";
+            txt += "Data should be of type: " + _type;
+            string ftr = "Press 'Add Body to System' button \nwhen all parameters are entered";
+            var helpForm = new FormHelp(hdr, txt, ftr);
+            helpForm.Show();
         }
     }
 }

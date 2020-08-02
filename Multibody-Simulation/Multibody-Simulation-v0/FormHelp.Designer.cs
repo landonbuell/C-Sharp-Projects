@@ -30,19 +30,19 @@
         {
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.panelBotttomPad = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.labelFooter = new System.Windows.Forms.Label();
             this.btnCloseForm = new System.Windows.Forms.Button();
             this.panelBorderTop = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelHeader = new System.Windows.Forms.Label();
             this.panelPad1 = new System.Windows.Forms.Panel();
             this.panelPadd2 = new System.Windows.Forms.Panel();
-            this.panelFooter = new System.Windows.Forms.Panel();
             this.panelTextBody = new System.Windows.Forms.Panel();
-            this.labelHeader = new System.Windows.Forms.Label();
             this.labelMessageBody = new System.Windows.Forms.Label();
-            this.labelFooter = new System.Windows.Forms.Label();
             this.panelBotttomPad.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.panelTextBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,26 @@
             this.panelBotttomPad.Name = "panelBotttomPad";
             this.panelBotttomPad.Size = new System.Drawing.Size(778, 100);
             this.panelBotttomPad.TabIndex = 6;
+            // 
+            // panelFooter
+            // 
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelFooter.Controls.Add(this.labelFooter);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelFooter.Location = new System.Drawing.Point(0, 0);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(500, 100);
+            this.panelFooter.TabIndex = 8;
+            // 
+            // labelFooter
+            // 
+            this.labelFooter.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelFooter.AutoSize = true;
+            this.labelFooter.Location = new System.Drawing.Point(3, 22);
+            this.labelFooter.Name = "labelFooter";
+            this.labelFooter.Size = new System.Drawing.Size(220, 37);
+            this.labelFooter.TabIndex = 1;
+            this.labelFooter.Text = "Default Footer";
             // 
             // btnCloseForm
             // 
@@ -99,6 +119,17 @@
             this.panelHeader.Size = new System.Drawing.Size(778, 100);
             this.panelHeader.TabIndex = 7;
             // 
+            // labelHeader
+            // 
+            this.labelHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(12, 17);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(348, 55);
+            this.labelHeader.TabIndex = 0;
+            this.labelHeader.Text = "Default Header";
+            // 
             // panelPad1
             // 
             this.panelPad1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -117,18 +148,9 @@
             this.panelPadd2.Size = new System.Drawing.Size(778, 20);
             this.panelPadd2.TabIndex = 9;
             // 
-            // panelFooter
-            // 
-            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelFooter.Controls.Add(this.labelFooter);
-            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelFooter.Location = new System.Drawing.Point(0, 0);
-            this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(500, 100);
-            this.panelFooter.TabIndex = 8;
-            // 
             // panelTextBody
             // 
+            this.panelTextBody.AutoScroll = true;
             this.panelTextBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelTextBody.Controls.Add(this.labelMessageBody);
             this.panelTextBody.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,36 +159,16 @@
             this.panelTextBody.Size = new System.Drawing.Size(778, 204);
             this.panelTextBody.TabIndex = 10;
             // 
-            // labelHeader
-            // 
-            this.labelHeader.AutoSize = true;
-            this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.Location = new System.Drawing.Point(0, 0);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(348, 55);
-            this.labelHeader.TabIndex = 0;
-            this.labelHeader.Text = "Default Header";
-            // 
             // labelMessageBody
             // 
+            this.labelMessageBody.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelMessageBody.AutoSize = true;
-            this.labelMessageBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMessageBody.Location = new System.Drawing.Point(0, 0);
+            this.labelMessageBody.Location = new System.Drawing.Point(3, 60);
             this.labelMessageBody.Name = "labelMessageBody";
             this.labelMessageBody.Size = new System.Drawing.Size(335, 37);
             this.labelMessageBody.TabIndex = 1;
             this.labelMessageBody.Text = "Default Messege Body";
-            // 
-            // labelFooter
-            // 
-            this.labelFooter.AutoSize = true;
-            this.labelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFooter.Location = new System.Drawing.Point(0, 0);
-            this.labelFooter.Name = "labelFooter";
-            this.labelFooter.Size = new System.Drawing.Size(220, 37);
-            this.labelFooter.TabIndex = 1;
-            this.labelFooter.Text = "Default Footer";
+            this.labelMessageBody.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormHelp
             // 
@@ -187,10 +189,10 @@
             this.Text = "Help Messege";
             this.Load += new System.EventHandler(this.FormHelp_Load);
             this.panelBotttomPad.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.panelTextBody.ResumeLayout(false);
             this.panelTextBody.PerformLayout();
             this.ResumeLayout(false);

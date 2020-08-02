@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace Multibody_Simulation_v0
 {
@@ -16,6 +18,7 @@ namespace Multibody_Simulation_v0
         
         // Init MultiBody System Object Variable
         public Multibody_System MultibodySystem;
+        public List<Label> labels;
 
         public FormMain(Multibody_System _system)
         {
@@ -23,17 +26,17 @@ namespace Multibody_Simulation_v0
             InitializeComponent();
             InitSubMenus();
             MultibodySystem = _system;
+            labels = new List<Label>()
+            {
+                labelTotalMass,labelAvgMass,
+                labelCmX,labelCmY,labelCmZ,
+                labelNetVelX,labelNetVelY,labelNetVelZ
+            };
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void RefreshSystemDetails()
-        {
-            // Gather System Details Attrb and Display in Menu
-            var data = MultibodySystem.__getSystemDetails__();
         }
 
         private void InitSubMenus()
@@ -68,35 +71,63 @@ namespace Multibody_Simulation_v0
                 subMenu.Visible = false;
         }
 
+        private void ResetTextBoxes(List<TextBox> txtboxes, List<string> values)
+        {
+            // Reset all Text Boxes in list to corresponding strings
+            Debug.Assert(txtboxes.Count() == values.Count());
+            for (int i = 0; i < txtboxes.Count(); i++)
+                txtboxes[i].Text = values[i]; 
+        }
+
+
+        // SYSTEM DETAILS MENU METHODS
         private void btnSystemDetails_Click(object sender, EventArgs e)
         {
             // Show System Details Submenu
             ShowSubMenu(panelMenuSystemDetails);
         }
 
+        private void UpdateSystemDetails (List<Double> details)
+        {
+            // Update System Detail Text Labels
+            Debug.Assert(labels.Count() == details.Count());
+            for (int i = 0; i < labels.Count(); i++)
+            labels[i].Text = Convert.ToString(details[i]);
+        }
+
+        // UNIT SYSTEM MENU METHODS
         private void btnUnitSystems_Click(object sender, EventArgs e)
         {
             // Show Unit Systems Submenu
             ShowSubMenu(panelMenuUnitSystems);
         }
 
+        // SAVE - LOAD MENU METHODS
         private void btnSaveLoad_Click(object sender, EventArgs e)
         {
             // Show Save/Load Submenu
             ShowSubMenu(panelMenuSaveLoad);
         }
 
+        // ADD BODY TO SYSTEM MENU METHODS
         private void btnShowAdd_Click(object sender, EventArgs e)
         {
             // Show Add Body Submenu
+            
             ShowSubMenu(panelMenuAddBody);
         }
+
+        
 
         private void btnAddBodyObj_Click(object sender, EventArgs e)
         {
             // Add Body to System list
             AddBody();
             // Update System Details
+            List<double> systemDetails = MultibodySystem.__getSystemDetails__();
+            UpdateSystemDetails(systemDetails);
+            // Reset the text Boxes
+            
         }
 
         private void AddBody()
@@ -129,7 +160,7 @@ namespace Multibody_Simulation_v0
             }
         }
 
-        // HELP MENU BUTTONS
+        // HELP 'ADD BODY' MENU BUTTONS
         private void btnHelpName_Click(object sender, EventArgs e)
         {
             // Display Help Window for Name attribute      

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Multibody_Simulation_v0
 {
-    static class Constants
+    static class Converstions
     {
         // Initialize G in different Unit systems
         public const double G_siUnits = 6.673e-11;

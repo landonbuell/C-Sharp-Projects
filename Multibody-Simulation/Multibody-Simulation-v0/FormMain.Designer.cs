@@ -41,6 +41,23 @@
             this.radioSiUnits = new System.Windows.Forms.RadioButton();
             this.btnUnitSystems = new System.Windows.Forms.Button();
             this.panelMenuSystemDetails = new System.Windows.Forms.Panel();
+            this.splitMenuSystemDetails = new System.Windows.Forms.SplitContainer();
+            this.btnHelpNetVelZ = new System.Windows.Forms.Button();
+            this.btnHelpNetVelY = new System.Windows.Forms.Button();
+            this.btnHelpNetVelX = new System.Windows.Forms.Button();
+            this.btnHelpCmZ = new System.Windows.Forms.Button();
+            this.btnHelpCmY = new System.Windows.Forms.Button();
+            this.btnHelpCmX = new System.Windows.Forms.Button();
+            this.btnHelpAvgMass = new System.Windows.Forms.Button();
+            this.btnHelpTotalMass = new System.Windows.Forms.Button();
+            this.labelNetVelZ = new System.Windows.Forms.Label();
+            this.labelNetVelY = new System.Windows.Forms.Label();
+            this.labelNetVelX = new System.Windows.Forms.Label();
+            this.labelCmZ = new System.Windows.Forms.Label();
+            this.labelCmY = new System.Windows.Forms.Label();
+            this.labelCmX = new System.Windows.Forms.Label();
+            this.labelAvgMass = new System.Windows.Forms.Label();
+            this.labelTotalMass = new System.Windows.Forms.Label();
             this.btnSystemDetails = new System.Windows.Forms.Button();
             this.panelMainLogo = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
@@ -71,42 +88,22 @@
             this.panelTopRight = new System.Windows.Forms.Panel();
             this.panelTopCenter = new System.Windows.Forms.Panel();
             this.panelMainViewer = new System.Windows.Forms.Panel();
-            this.dataMainViewer = new System.Windows.Forms.DataGridView();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRadius = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVelX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVelY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVelZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelBottomCenter = new System.Windows.Forms.Panel();
-            this.splitMenuSystemDetails = new System.Windows.Forms.SplitContainer();
-            this.btnHelpCmZ = new System.Windows.Forms.Button();
-            this.btnHelpCmY = new System.Windows.Forms.Button();
-            this.btnHelpCmX = new System.Windows.Forms.Button();
-            this.btnHelpAvgMass = new System.Windows.Forms.Button();
-            this.btnHelpTotalMass = new System.Windows.Forms.Button();
-            this.btnHelpNetVelZ = new System.Windows.Forms.Button();
-            this.btnHelpNetVelY = new System.Windows.Forms.Button();
-            this.btnHelpNetVelX = new System.Windows.Forms.Button();
             this.multibodySystemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelBottomCenter = new System.Windows.Forms.Panel();
             this.panelMenuMain.SuspendLayout();
             this.panelMenuSaveLoad.SuspendLayout();
             this.panelMenuUnitSystems.SuspendLayout();
             this.panelMenuSystemDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitMenuSystemDetails)).BeginInit();
+            this.splitMenuSystemDetails.Panel1.SuspendLayout();
+            this.splitMenuSystemDetails.Panel2.SuspendLayout();
+            this.splitMenuSystemDetails.SuspendLayout();
             this.panelMenuRight.SuspendLayout();
             this.panelMenuAddBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMenuAddBody)).BeginInit();
             this.splitMenuAddBody.Panel1.SuspendLayout();
             this.splitMenuAddBody.Panel2.SuspendLayout();
             this.splitMenuAddBody.SuspendLayout();
-            this.panelMainViewer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMainViewer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitMenuSystemDetails)).BeginInit();
-            this.splitMenuSystemDetails.Panel1.SuspendLayout();
-            this.splitMenuSystemDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,6 +278,277 @@
             this.panelMenuSystemDetails.Name = "panelMenuSystemDetails";
             this.panelMenuSystemDetails.Size = new System.Drawing.Size(374, 400);
             this.panelMenuSystemDetails.TabIndex = 2;
+            // 
+            // splitMenuSystemDetails
+            // 
+            this.splitMenuSystemDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitMenuSystemDetails.Location = new System.Drawing.Point(0, 0);
+            this.splitMenuSystemDetails.Name = "splitMenuSystemDetails";
+            // 
+            // splitMenuSystemDetails.Panel1
+            // 
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelZ);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelY);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelX);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmZ);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmY);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmX);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpAvgMass);
+            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpTotalMass);
+            // 
+            // splitMenuSystemDetails.Panel2
+            // 
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelNetVelZ);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelNetVelY);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelNetVelX);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelCmZ);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelCmY);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelCmX);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelAvgMass);
+            this.splitMenuSystemDetails.Panel2.Controls.Add(this.labelTotalMass);
+            this.splitMenuSystemDetails.Size = new System.Drawing.Size(374, 400);
+            this.splitMenuSystemDetails.SplitterDistance = 250;
+            this.splitMenuSystemDetails.TabIndex = 0;
+            // 
+            // btnHelpNetVelZ
+            // 
+            this.btnHelpNetVelZ.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpNetVelZ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpNetVelZ.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelZ.FlatAppearance.BorderSize = 0;
+            this.btnHelpNetVelZ.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelZ.Location = new System.Drawing.Point(0, 350);
+            this.btnHelpNetVelZ.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpNetVelZ.Name = "btnHelpNetVelZ";
+            this.btnHelpNetVelZ.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpNetVelZ.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpNetVelZ.TabIndex = 37;
+            this.btnHelpNetVelZ.Text = "Z Net-Velocity";
+            this.btnHelpNetVelZ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpNetVelZ.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpNetVelY
+            // 
+            this.btnHelpNetVelY.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpNetVelY.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpNetVelY.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelY.FlatAppearance.BorderSize = 0;
+            this.btnHelpNetVelY.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelY.Location = new System.Drawing.Point(0, 300);
+            this.btnHelpNetVelY.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpNetVelY.Name = "btnHelpNetVelY";
+            this.btnHelpNetVelY.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpNetVelY.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpNetVelY.TabIndex = 36;
+            this.btnHelpNetVelY.Text = "Y Net-Velocity";
+            this.btnHelpNetVelY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpNetVelY.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpNetVelX
+            // 
+            this.btnHelpNetVelX.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpNetVelX.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpNetVelX.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelX.FlatAppearance.BorderSize = 0;
+            this.btnHelpNetVelX.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpNetVelX.Location = new System.Drawing.Point(0, 250);
+            this.btnHelpNetVelX.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpNetVelX.Name = "btnHelpNetVelX";
+            this.btnHelpNetVelX.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpNetVelX.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpNetVelX.TabIndex = 35;
+            this.btnHelpNetVelX.Text = "X Net-Velocity";
+            this.btnHelpNetVelX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpNetVelX.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpCmZ
+            // 
+            this.btnHelpCmZ.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpCmZ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpCmZ.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpCmZ.FlatAppearance.BorderSize = 0;
+            this.btnHelpCmZ.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpCmZ.Location = new System.Drawing.Point(0, 200);
+            this.btnHelpCmZ.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpCmZ.Name = "btnHelpCmZ";
+            this.btnHelpCmZ.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpCmZ.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpCmZ.TabIndex = 34;
+            this.btnHelpCmZ.Text = "Z-Center of Mass";
+            this.btnHelpCmZ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpCmZ.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpCmY
+            // 
+            this.btnHelpCmY.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpCmY.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpCmY.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpCmY.FlatAppearance.BorderSize = 0;
+            this.btnHelpCmY.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpCmY.Location = new System.Drawing.Point(0, 150);
+            this.btnHelpCmY.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpCmY.Name = "btnHelpCmY";
+            this.btnHelpCmY.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpCmY.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpCmY.TabIndex = 33;
+            this.btnHelpCmY.Text = "Y-Center of Mass";
+            this.btnHelpCmY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpCmY.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpCmX
+            // 
+            this.btnHelpCmX.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpCmX.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpCmX.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpCmX.FlatAppearance.BorderSize = 0;
+            this.btnHelpCmX.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpCmX.Location = new System.Drawing.Point(0, 100);
+            this.btnHelpCmX.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpCmX.Name = "btnHelpCmX";
+            this.btnHelpCmX.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpCmX.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpCmX.TabIndex = 32;
+            this.btnHelpCmX.Text = "X-Center of Mass";
+            this.btnHelpCmX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpCmX.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpAvgMass
+            // 
+            this.btnHelpAvgMass.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpAvgMass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpAvgMass.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpAvgMass.FlatAppearance.BorderSize = 0;
+            this.btnHelpAvgMass.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpAvgMass.Location = new System.Drawing.Point(0, 50);
+            this.btnHelpAvgMass.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpAvgMass.Name = "btnHelpAvgMass";
+            this.btnHelpAvgMass.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpAvgMass.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpAvgMass.TabIndex = 30;
+            this.btnHelpAvgMass.Text = "Average Mass";
+            this.btnHelpAvgMass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpAvgMass.UseVisualStyleBackColor = false;
+            // 
+            // btnHelpTotalMass
+            // 
+            this.btnHelpTotalMass.BackColor = System.Drawing.Color.Gray;
+            this.btnHelpTotalMass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelpTotalMass.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHelpTotalMass.FlatAppearance.BorderSize = 0;
+            this.btnHelpTotalMass.ForeColor = System.Drawing.Color.Black;
+            this.btnHelpTotalMass.Location = new System.Drawing.Point(0, 0);
+            this.btnHelpTotalMass.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHelpTotalMass.Name = "btnHelpTotalMass";
+            this.btnHelpTotalMass.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnHelpTotalMass.Size = new System.Drawing.Size(250, 50);
+            this.btnHelpTotalMass.TabIndex = 29;
+            this.btnHelpTotalMass.Text = "Total Mass";
+            this.btnHelpTotalMass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelpTotalMass.UseVisualStyleBackColor = false;
+            // 
+            // labelNetVelZ
+            // 
+            this.labelNetVelZ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNetVelZ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelNetVelZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNetVelZ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelNetVelZ.Location = new System.Drawing.Point(0, 350);
+            this.labelNetVelZ.Name = "labelNetVelZ";
+            this.labelNetVelZ.Size = new System.Drawing.Size(120, 50);
+            this.labelNetVelZ.TabIndex = 7;
+            this.labelNetVelZ.Text = "---";
+            this.labelNetVelZ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNetVelY
+            // 
+            this.labelNetVelY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNetVelY.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelNetVelY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNetVelY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelNetVelY.Location = new System.Drawing.Point(0, 300);
+            this.labelNetVelY.Name = "labelNetVelY";
+            this.labelNetVelY.Size = new System.Drawing.Size(120, 50);
+            this.labelNetVelY.TabIndex = 6;
+            this.labelNetVelY.Text = "---";
+            this.labelNetVelY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNetVelX
+            // 
+            this.labelNetVelX.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNetVelX.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelNetVelX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNetVelX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelNetVelX.Location = new System.Drawing.Point(0, 250);
+            this.labelNetVelX.Name = "labelNetVelX";
+            this.labelNetVelX.Size = new System.Drawing.Size(120, 50);
+            this.labelNetVelX.TabIndex = 5;
+            this.labelNetVelX.Text = "---";
+            this.labelNetVelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCmZ
+            // 
+            this.labelCmZ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCmZ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCmZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelCmZ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelCmZ.Location = new System.Drawing.Point(0, 200);
+            this.labelCmZ.Name = "labelCmZ";
+            this.labelCmZ.Size = new System.Drawing.Size(120, 50);
+            this.labelCmZ.TabIndex = 4;
+            this.labelCmZ.Text = "---";
+            this.labelCmZ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCmY
+            // 
+            this.labelCmY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCmY.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCmY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelCmY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelCmY.Location = new System.Drawing.Point(0, 150);
+            this.labelCmY.Name = "labelCmY";
+            this.labelCmY.Size = new System.Drawing.Size(120, 50);
+            this.labelCmY.TabIndex = 3;
+            this.labelCmY.Text = "---";
+            this.labelCmY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCmX
+            // 
+            this.labelCmX.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCmX.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCmX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelCmX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelCmX.Location = new System.Drawing.Point(0, 100);
+            this.labelCmX.Name = "labelCmX";
+            this.labelCmX.Size = new System.Drawing.Size(120, 50);
+            this.labelCmX.TabIndex = 2;
+            this.labelCmX.Text = "---";
+            this.labelCmX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAvgMass
+            // 
+            this.labelAvgMass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelAvgMass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelAvgMass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelAvgMass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelAvgMass.Location = new System.Drawing.Point(0, 50);
+            this.labelAvgMass.Name = "labelAvgMass";
+            this.labelAvgMass.Size = new System.Drawing.Size(120, 50);
+            this.labelAvgMass.TabIndex = 1;
+            this.labelAvgMass.Text = "---";
+            this.labelAvgMass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTotalMass
+            // 
+            this.labelTotalMass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelTotalMass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelTotalMass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelTotalMass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelTotalMass.Location = new System.Drawing.Point(0, 0);
+            this.labelTotalMass.Name = "labelTotalMass";
+            this.labelTotalMass.Size = new System.Drawing.Size(120, 50);
+            this.labelTotalMass.TabIndex = 0;
+            this.labelTotalMass.Text = "---";
+            this.labelTotalMass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSystemDetails
             // 
@@ -641,6 +909,7 @@
             this.txtAddRadius.Name = "txtAddRadius";
             this.txtAddRadius.Size = new System.Drawing.Size(196, 50);
             this.txtAddRadius.TabIndex = 22;
+            this.txtAddRadius.Text = "0";
             this.txtAddRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAddMass
@@ -653,6 +922,7 @@
             this.txtAddMass.Name = "txtAddMass";
             this.txtAddMass.Size = new System.Drawing.Size(196, 50);
             this.txtAddMass.TabIndex = 21;
+            this.txtAddMass.Text = "0";
             this.txtAddMass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAddName
@@ -666,6 +936,7 @@
             this.txtAddName.Name = "txtAddName";
             this.txtAddName.Size = new System.Drawing.Size(196, 50);
             this.txtAddName.TabIndex = 20;
+            this.txtAddName.Text = "0";
             this.txtAddName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAddValueHelp
@@ -714,90 +985,15 @@
             // panelMainViewer
             // 
             this.panelMainViewer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelMainViewer.Controls.Add(this.dataMainViewer);
             this.panelMainViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainViewer.Location = new System.Drawing.Point(400, 200);
             this.panelMainViewer.Name = "panelMainViewer";
             this.panelMainViewer.Size = new System.Drawing.Size(1178, 1144);
             this.panelMainViewer.TabIndex = 3;
             // 
-            // dataMainViewer
+            // multibodySystemBindingSource
             // 
-            this.dataMainViewer.AutoGenerateColumns = false;
-            this.dataMainViewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataMainViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMainViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colName,
-            this.colMass,
-            this.colRadius,
-            this.colPosX,
-            this.colPosY,
-            this.colPosZ,
-            this.colVelX,
-            this.colVelY,
-            this.colVelZ});
-            this.dataMainViewer.DataSource = this.multibodySystemBindingSource;
-            this.dataMainViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataMainViewer.Location = new System.Drawing.Point(0, 0);
-            this.dataMainViewer.Name = "dataMainViewer";
-            this.dataMainViewer.RowHeadersWidth = 20;
-            this.dataMainViewer.RowTemplate.Height = 28;
-            this.dataMainViewer.Size = new System.Drawing.Size(1178, 1144);
-            this.dataMainViewer.TabIndex = 0;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name";
-            this.colName.MinimumWidth = 120;
-            this.colName.Name = "colName";
-            // 
-            // colMass
-            // 
-            this.colMass.HeaderText = "Mass";
-            this.colMass.MinimumWidth = 100;
-            this.colMass.Name = "colMass";
-            // 
-            // colRadius
-            // 
-            this.colRadius.HeaderText = "Radius";
-            this.colRadius.MinimumWidth = 100;
-            this.colRadius.Name = "colRadius";
-            // 
-            // colPosX
-            // 
-            this.colPosX.HeaderText = "X-Position";
-            this.colPosX.MinimumWidth = 100;
-            this.colPosX.Name = "colPosX";
-            // 
-            // colPosY
-            // 
-            this.colPosY.HeaderText = "Y-Position";
-            this.colPosY.MinimumWidth = 100;
-            this.colPosY.Name = "colPosY";
-            // 
-            // colPosZ
-            // 
-            this.colPosZ.HeaderText = "Z-Position";
-            this.colPosZ.MinimumWidth = 100;
-            this.colPosZ.Name = "colPosZ";
-            // 
-            // colVelX
-            // 
-            this.colVelX.HeaderText = "X-Velocity";
-            this.colVelX.MinimumWidth = 100;
-            this.colVelX.Name = "colVelX";
-            // 
-            // colVelY
-            // 
-            this.colVelY.HeaderText = "Y-Velocity";
-            this.colVelY.MinimumWidth = 100;
-            this.colVelY.Name = "colVelY";
-            // 
-            // colVelZ
-            // 
-            this.colVelZ.HeaderText = "Z-Velocity";
-            this.colVelZ.MinimumWidth = 100;
-            this.colVelZ.Name = "colVelZ";
+            this.multibodySystemBindingSource.DataSource = typeof(Multibody_Simulation_v0.Multibody_System);
             // 
             // panelBottomCenter
             // 
@@ -806,166 +1002,6 @@
             this.panelBottomCenter.Name = "panelBottomCenter";
             this.panelBottomCenter.Size = new System.Drawing.Size(1178, 100);
             this.panelBottomCenter.TabIndex = 4;
-            // 
-            // splitMenuSystemDetails
-            // 
-            this.splitMenuSystemDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitMenuSystemDetails.Location = new System.Drawing.Point(0, 0);
-            this.splitMenuSystemDetails.Name = "splitMenuSystemDetails";
-            // 
-            // splitMenuSystemDetails.Panel1
-            // 
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelZ);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelY);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpNetVelX);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmZ);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmY);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpCmX);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpAvgMass);
-            this.splitMenuSystemDetails.Panel1.Controls.Add(this.btnHelpTotalMass);
-            this.splitMenuSystemDetails.Size = new System.Drawing.Size(374, 400);
-            this.splitMenuSystemDetails.SplitterDistance = 233;
-            this.splitMenuSystemDetails.TabIndex = 0;
-            // 
-            // btnHelpCmZ
-            // 
-            this.btnHelpCmZ.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpCmZ.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpCmZ.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpCmZ.FlatAppearance.BorderSize = 0;
-            this.btnHelpCmZ.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpCmZ.Location = new System.Drawing.Point(0, 200);
-            this.btnHelpCmZ.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpCmZ.Name = "btnHelpCmZ";
-            this.btnHelpCmZ.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpCmZ.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpCmZ.TabIndex = 34;
-            this.btnHelpCmZ.Text = "Z-Center of Mass";
-            this.btnHelpCmZ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpCmZ.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpCmY
-            // 
-            this.btnHelpCmY.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpCmY.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpCmY.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpCmY.FlatAppearance.BorderSize = 0;
-            this.btnHelpCmY.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpCmY.Location = new System.Drawing.Point(0, 150);
-            this.btnHelpCmY.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpCmY.Name = "btnHelpCmY";
-            this.btnHelpCmY.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpCmY.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpCmY.TabIndex = 33;
-            this.btnHelpCmY.Text = "Y-Center of Mass";
-            this.btnHelpCmY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpCmY.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpCmX
-            // 
-            this.btnHelpCmX.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpCmX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpCmX.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpCmX.FlatAppearance.BorderSize = 0;
-            this.btnHelpCmX.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpCmX.Location = new System.Drawing.Point(0, 100);
-            this.btnHelpCmX.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpCmX.Name = "btnHelpCmX";
-            this.btnHelpCmX.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpCmX.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpCmX.TabIndex = 32;
-            this.btnHelpCmX.Text = "X-Center of Mass";
-            this.btnHelpCmX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpCmX.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpAvgMass
-            // 
-            this.btnHelpAvgMass.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpAvgMass.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpAvgMass.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpAvgMass.FlatAppearance.BorderSize = 0;
-            this.btnHelpAvgMass.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpAvgMass.Location = new System.Drawing.Point(0, 50);
-            this.btnHelpAvgMass.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpAvgMass.Name = "btnHelpAvgMass";
-            this.btnHelpAvgMass.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpAvgMass.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpAvgMass.TabIndex = 30;
-            this.btnHelpAvgMass.Text = "Average Mass";
-            this.btnHelpAvgMass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpAvgMass.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpTotalMass
-            // 
-            this.btnHelpTotalMass.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpTotalMass.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpTotalMass.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpTotalMass.FlatAppearance.BorderSize = 0;
-            this.btnHelpTotalMass.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpTotalMass.Location = new System.Drawing.Point(0, 0);
-            this.btnHelpTotalMass.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpTotalMass.Name = "btnHelpTotalMass";
-            this.btnHelpTotalMass.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpTotalMass.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpTotalMass.TabIndex = 29;
-            this.btnHelpTotalMass.Text = "Total Mass";
-            this.btnHelpTotalMass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpTotalMass.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpNetVelZ
-            // 
-            this.btnHelpNetVelZ.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpNetVelZ.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpNetVelZ.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelZ.FlatAppearance.BorderSize = 0;
-            this.btnHelpNetVelZ.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelZ.Location = new System.Drawing.Point(0, 350);
-            this.btnHelpNetVelZ.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpNetVelZ.Name = "btnHelpNetVelZ";
-            this.btnHelpNetVelZ.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpNetVelZ.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpNetVelZ.TabIndex = 37;
-            this.btnHelpNetVelZ.Text = "Z Net-Velocity";
-            this.btnHelpNetVelZ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpNetVelZ.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpNetVelY
-            // 
-            this.btnHelpNetVelY.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpNetVelY.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpNetVelY.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelY.FlatAppearance.BorderSize = 0;
-            this.btnHelpNetVelY.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelY.Location = new System.Drawing.Point(0, 300);
-            this.btnHelpNetVelY.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpNetVelY.Name = "btnHelpNetVelY";
-            this.btnHelpNetVelY.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpNetVelY.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpNetVelY.TabIndex = 36;
-            this.btnHelpNetVelY.Text = "Y Net-Velocity";
-            this.btnHelpNetVelY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpNetVelY.UseVisualStyleBackColor = false;
-            // 
-            // btnHelpNetVelX
-            // 
-            this.btnHelpNetVelX.BackColor = System.Drawing.Color.Gray;
-            this.btnHelpNetVelX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpNetVelX.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelX.FlatAppearance.BorderSize = 0;
-            this.btnHelpNetVelX.ForeColor = System.Drawing.Color.Black;
-            this.btnHelpNetVelX.Location = new System.Drawing.Point(0, 250);
-            this.btnHelpNetVelX.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHelpNetVelX.Name = "btnHelpNetVelX";
-            this.btnHelpNetVelX.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHelpNetVelX.Size = new System.Drawing.Size(233, 50);
-            this.btnHelpNetVelX.TabIndex = 35;
-            this.btnHelpNetVelX.Text = "X Net-Velocity";
-            this.btnHelpNetVelX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpNetVelX.UseVisualStyleBackColor = false;
-            // 
-            // multibodySystemBindingSource
-            // 
-            this.multibodySystemBindingSource.DataSource = typeof(Multibody_Simulation_v0.Multibody_System);
             // 
             // FormMain
             // 
@@ -987,6 +1023,10 @@
             this.panelMenuSaveLoad.ResumeLayout(false);
             this.panelMenuUnitSystems.ResumeLayout(false);
             this.panelMenuSystemDetails.ResumeLayout(false);
+            this.splitMenuSystemDetails.Panel1.ResumeLayout(false);
+            this.splitMenuSystemDetails.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitMenuSystemDetails)).EndInit();
+            this.splitMenuSystemDetails.ResumeLayout(false);
             this.panelMenuRight.ResumeLayout(false);
             this.panelMenuAddBody.ResumeLayout(false);
             this.splitMenuAddBody.Panel1.ResumeLayout(false);
@@ -994,11 +1034,6 @@
             this.splitMenuAddBody.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMenuAddBody)).EndInit();
             this.splitMenuAddBody.ResumeLayout(false);
-            this.panelMainViewer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataMainViewer)).EndInit();
-            this.splitMenuSystemDetails.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitMenuSystemDetails)).EndInit();
-            this.splitMenuSystemDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.multibodySystemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1046,16 +1081,6 @@
         private System.Windows.Forms.TextBox txtAddPosZ;
         private System.Windows.Forms.Button btnAddBodyObj;
         private System.Windows.Forms.BindingSource multibodySystemBindingSource;
-        private System.Windows.Forms.DataGridView dataMainViewer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRadius;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPosX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPosY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPosZ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVelX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVelY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVelZ;
         private System.Windows.Forms.Panel panelMenuSaveLoad;
         private System.Windows.Forms.Button btnSaveSystem;
         private System.Windows.Forms.Button btnSaveLoad;
@@ -1069,5 +1094,13 @@
         private System.Windows.Forms.Button btnHelpNetVelZ;
         private System.Windows.Forms.Button btnHelpNetVelY;
         private System.Windows.Forms.Button btnHelpNetVelX;
+        private System.Windows.Forms.Label labelNetVelZ;
+        private System.Windows.Forms.Label labelNetVelY;
+        private System.Windows.Forms.Label labelNetVelX;
+        private System.Windows.Forms.Label labelCmZ;
+        private System.Windows.Forms.Label labelCmY;
+        private System.Windows.Forms.Label labelCmX;
+        private System.Windows.Forms.Label labelAvgMass;
+        private System.Windows.Forms.Label labelTotalMass;
     }
 }

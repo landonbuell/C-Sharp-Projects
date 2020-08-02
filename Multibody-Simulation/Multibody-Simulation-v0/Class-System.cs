@@ -19,8 +19,8 @@ namespace Multibody_Simulation_v0
         public List<Body> bodies;
         public double totalMass;
         public double averageMass;
-        public double[] centerOfMass;
-        public double[] netVelocity;
+        public List<double> centerOfMass;
+        public List<double> netVelocity;
 
         public Multibody_System(string _name, List<Body> _bodies)
         {
@@ -74,8 +74,8 @@ namespace Multibody_Simulation_v0
 
             // Compute Total Mass & Net Velocity & Center of mass         
             double _totalMass = 0.0;
-            double[] _netVelocity = new double[] { 0,0,0};
-            double[] _centerOfMass = new double[] { 0, 0, 0, };
+            List<double> _netVelocity = new List<double>() { 0,0,0};
+            List<double> _centerOfMass = new List<double>() { 0, 0, 0, };
             if (bodies.Count > 0)
             {
                 // Loop through system objects
@@ -85,10 +85,10 @@ namespace Multibody_Simulation_v0
                     for (int i = 0; i < 3; i++)
                         _netVelocity[i] += body.vel[i];
                 }
-                foreach (var body in bodies)
+                foreach (Body body in bodies)
                 {
                     for (int i = 0; i < 3; i++)
-                        _centerOfMass[i] += (body.mass * body.vel[i]);
+                        _centerOfMass[i] += (body.mass * body.pos[i]);
                 }
                 for (int i = 0; i < 3; i++)
                     _centerOfMass[i] /= _totalMass;           
@@ -98,16 +98,24 @@ namespace Multibody_Simulation_v0
             this.averageMass = totalMass / bodies.Count();
             this.centerOfMass = _centerOfMass;
             this.netVelocity = _netVelocity;
-
         }
 
         public List<double> __getSystemDetails__()
         {
             // Return System Details in one object for GUI
             List<double> data = new List<double>();
-            data.Add(totalMass);
-            data.AddRange(centerOfMass);
-            data.AddRange(netVelocity);
+            if (bodies.Count() > 0)
+            {
+                data.Add(totalMass);
+                data.Add(totalMass / bodies.Count());
+                data.AddRange(centerOfMass);
+                data.AddRange(netVelocity);
+            }
+            else
+            {
+                
+            }
+            
             return data;
         }
 

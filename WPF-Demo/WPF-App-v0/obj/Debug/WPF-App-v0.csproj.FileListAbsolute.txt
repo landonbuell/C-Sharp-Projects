@@ -1,0 +1,15 @@
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\bin\Debug\WPF-App-v0.exe.config
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\bin\Debug\WPF-App-v0.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\bin\Debug\WPF-App-v0.pdb
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.csprojAssemblyReference.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\MainWindow.g.cs
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\App.g.cs
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0_MarkupCompile.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0_MarkupCompile.lref
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\MainWindow.baml
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.g.resources
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF_App_v0.Properties.Resources.resources
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.csproj.GenerateResource.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.csproj.CoreCompileInputs.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\WPF-Demo\WPF-App-v0\obj\Debug\WPF-App-v0.pdb

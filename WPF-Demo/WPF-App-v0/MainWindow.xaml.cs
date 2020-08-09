@@ -24,5 +24,10 @@ namespace WPF_App_v0
         {
             InitializeComponent();
         }
+
+        private void btnPushMe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

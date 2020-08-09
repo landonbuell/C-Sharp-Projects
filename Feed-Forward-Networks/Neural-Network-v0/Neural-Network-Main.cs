@@ -17,11 +17,7 @@ namespace Neural_Network_v0
 
             SequentialModel JARVIS = new SequentialModel("JARVIS");
 
-            JARVIS.AddLayer(new InputLayer("InputLayer",new int[10,1]));
-            JARVIS.AddLayer(new LinearDenseLayer("D1"));
-
-            JARVIS.ModelSummary();
-
+           
         }
     }
 }

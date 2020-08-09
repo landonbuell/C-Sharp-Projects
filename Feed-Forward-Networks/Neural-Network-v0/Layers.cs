@@ -7,6 +7,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace Neural_Network_v0
@@ -17,9 +19,9 @@ namespace Neural_Network_v0
         public int layerNumber;
         public string layerName;
         public string layerType;
-        public ActivationFunction activation;
-        public int[,] inputShape;
-        public int[,] outputShape;
+        public Func<double[,]> activation;
+        public int[] inputShape = new int[2];
+        public int[] outputShape = new int[2];
         public double[,] weights;
         public double[,] biases;
 
@@ -29,7 +31,7 @@ namespace Neural_Network_v0
             this.layerNumber = layerNum;
         }
 
-        public void SetInputShape(int[,] shape)
+        public void SetInputShape(int[] shape)
         {
             // Set Input Shape of Layer Object
             this.inputShape = shape;
@@ -39,7 +41,7 @@ namespace Neural_Network_v0
 
     public class InputLayer : Layer
     {
-        public InputLayer(string name, int[,] inShape)
+        public InputLayer(string name, int[] inShape)
         {
             // Constructor Method for InputLayer Object
             this.layerName = name;
@@ -51,22 +53,30 @@ namespace Neural_Network_v0
         public double[,] __call__(double[,] X )
         {
             // Call InputLayer of Network
+            Debug.Assert(X.GetLength(0) == inputShape[0]);
+            Debug.Assert(X.GetLength(1) == inputShape[1]);
             return X;
         }
     }
 
     public class LinearDenseLayer : Layer
     {
-        public LinearDenseLayer(string name)
+        private int _neurons;
+
+        public LinearDenseLayer(string name, int neurons)
         {
             // Constructor Method for LinearDenseLayer
             this.layerName = name;
             this.layerType = "Linear Dense Layer";
+            this._neurons = neurons;
         }
 
-        public Double[,] __call__()
+        public Double[,] __call__(double[,] X)
         {
             // Call LinearDenseLayer of network
+            // Call InputLayer of Network
+            Debug.Assert(X.GetLength(0) == inputShape[0]);
+            Debug.Assert(X.GetLength(1) == inputShape[1]);
             double[,] Y = new double[2,2];
             return Y;
         }

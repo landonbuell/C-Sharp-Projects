@@ -15,8 +15,17 @@ namespace Neural_Network_v0
         static void Main()
         {
 
-            SequentialModel JARVIS = new SequentialModel("JARVIS");
+            int batchSize = 32;
+            int n_features = 4;
+            int n_classes = 2;
 
+            SequentialNetwork JARVIS = new SequentialNetwork("JARVIS");
+            JARVIS.AddLayer(new InputLayer("Input",new int[2] {n_features,batchSize}));
+            JARVIS.AddLayer(new LinearDenseLayer("D1", 16));
+            JARVIS.AddLayer(new LinearDenseLayer("D2", 64));
+            JARVIS.AddLayer(new LinearDenseLayer("Output", n_classes));
+
+            JARVIS.ModelSummary();
            
         }
     }

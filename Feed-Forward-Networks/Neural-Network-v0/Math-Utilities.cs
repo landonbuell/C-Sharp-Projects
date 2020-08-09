@@ -23,7 +23,7 @@ namespace Neural_Network_v0
     {
         // Class to do basic Linear Algebra operations 
 
-        public static double[,] Transpose(double[,] A)
+        public static double[,] Transpose (double[,] A)
         {
             // Transpose 2D input array
             double[,] B = new double[A.GetLength(1), A.GetLength(0)];
@@ -76,11 +76,11 @@ namespace Neural_Network_v0
         public static double DotProduct (double[] A, double[] B)
         {
             // Compute the Dot-Product between array A and array B
-            Debug.Assert(_A.Length == _B.Length);
+            Debug.Assert(A.Length == B.Length);
             double _sum = Convert.ToDouble(0);
-            for (int i = 0; i < _A.Length; i++)
+            for (int i = 0; i < A.Length; i++)
             {
-                _sum += _A[i] * _B[i];
+                _sum += A[i] * B[i];
             }
             return _sum;
         }

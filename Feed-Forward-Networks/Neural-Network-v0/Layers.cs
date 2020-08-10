@@ -1,6 +1,6 @@
 ﻿/*
  * Landon Buell
- * Nueral Netork Test v0
+ * Neural Netork Test v0
  * Layer Objects
  * 29 July 2020
  */
@@ -13,28 +13,92 @@ using System.Text;
 
 namespace Neural_Network_v0
 {
+
     public class Layer
     {
         // Init Variables for Layer Parent Class
-        public int layerNumber;
-        public string layerName;
-        public string layerType;
-        public Func<double[,]> activation;
-        public int[] inputShape = new int[2];
-        public int[] outputShape = new int[2];
-        public double[,] weights;
-        public double[,] biases;
+        private double[,] _weights;
+        private double[,] _biases;
 
-        public void SetLayerNum(int layerNum)
+        public Layer()
         {
-            // Set Layer Number Index
-            this.layerNumber = layerNum;
+            // Constructor Method for Layer Parent Class
+            InputShape = new int[2] { 0, 0 };
+            OutputShape = new int[2] { 0, 0 };
         }
 
-        public void SetInputShape(int[] shape)
+        public int LayerNumber
         {
-            // Set Input Shape of Layer Object
-            this.inputShape = shape;
+            // Get or Set Layer Number Index
+            get; set;
+        }
+
+        public string LayerName
+        {
+            // Get or Set Layer Name value
+            get; set;
+        }
+
+        public string LayerType
+        {
+            // Get or Set the Layer Type
+            get; set;
+        }
+
+        public int Neurons
+        {
+            // Get or Set the Number of Neurons in the Dense Layer
+            get; set;
+        }
+
+        public int[] InputShape 
+        {
+            // Get or Set Input Shape of Layer Object
+            get; set;
+        }
+
+        public int[] OutputShape
+        {
+            // Get or Set Input Shape of Layer Object
+            get; set;
+        }
+
+        public Func<double[,]> Activation
+        {
+            // Get or Set Activation Function for Layer
+            get; set;
+        }
+
+        public double[,] Weights
+        {
+            // Get or Set weight matrix elements
+            get { return this._weights; }
+            set
+            {
+                // Ensure Dimensions Match Before setting Input
+                Debug.Assert(value.GetLength(0) == OutputShape[0]);
+                Debug.Assert(value.GetLength(1) == InputShape[0]);
+                this._weights = value;
+            }
+        }
+
+        public double[,] Biases
+        {
+            // Get or Set weight matrix elements
+            get { return this._biases; }
+            set
+            {
+                // Ensure Dimensions Match Before setting Input
+                Debug.Assert(value.GetLength(0) == OutputShape[0]);
+                Debug.Assert(value.GetLength(1) == 1);
+                this._biases = value;
+            }
+        }
+
+        public void IntializeLayerParams()
+        {
+            // Initialize Layer Parameters Before When Model is Assemled
+
         }
 
     }
@@ -44,44 +108,103 @@ namespace Neural_Network_v0
         public InputLayer(string name, int[] inShape)
         {
             // Constructor Method for InputLayer Object
-            this.layerName = name;
-            this.layerType = "Input Layer";
-            this.inputShape = inShape;
-            this.outputShape = inputShape;
+            LayerName = name;
+            LayerType = "Input Layer";
+            InputShape = inShape;
+            OutputShape = inShape;
+
         }
 
         public double[,] __call__(double[,] X )
         {
             // Call InputLayer of Network
-            Debug.Assert(X.GetLength(0) == inputShape[0]);
-            Debug.Assert(X.GetLength(1) == inputShape[1]);
+            Debug.Assert(X.GetLength(0) == InputShape[0]);
+            Debug.Assert(X.GetLength(1) == InputShape[1]);
             return X;
         }
     }
 
     public class LinearDenseLayer : Layer
     {
-        private int _neurons;
 
         public LinearDenseLayer(string name, int neurons)
         {
-            // Constructor Method for LinearDenseLayer
-            this.layerName = name;
-            this.layerType = "Linear Dense Layer";
-            this._neurons = neurons;
+            // Constructor Method for Linear Dense Layer
+            LayerName = name;
+            LayerType = "Linear Dense Layer";
+            Neurons = neurons;
+            OutputShape = new int[2] { Neurons, InputShape[1] };
         }
 
-        public Double[,] __call__(double[,] X)
+        public LinearDenseLayer(string name, int neurons, Func<double[,]> actFunc)
+        {
+            // Constructor Method for LinearDenseLayer
+            LayerName = name;
+            LayerType = "Linear Dense Layer";
+            Neurons = neurons;
+            OutputShape = new int[2] { Neurons, InputShape[1] };
+            Activation = actFunc;
+        }
+
+        public double[,] __call__(double[,] X)
         {
             // Call LinearDenseLayer of network
-            // Call InputLayer of Network
-            Debug.Assert(X.GetLength(0) == inputShape[0]);
-            Debug.Assert(X.GetLength(1) == inputShape[1]);
+            Debug.Assert(X.GetLength(0) == InputShape[0]);
+            Debug.Assert(X.GetLength(1) == InputShape[1]);
             double[,] Y = new double[2,2];
             return Y;
         }
     }
 
+    public class QuadraticDenseLayer : Layer
+    {
 
+        private double[,] _weights2;
 
+        public QuadraticDenseLayer(string name, int neurons)
+        {
+            // Constructor Method for Quadratic Dense Layer
+            LayerName = name;
+            LayerType = "Linear Dense Layer";
+            Neurons = neurons;
+        }
+
+        public QuadraticDenseLayer(string name, int neurons, Func<double[,]> actFunc)
+        {
+            // Constructor Method for LinearDenseLayer
+            LayerName = name;
+            LayerType = "Linear Dense Layer";
+            Neurons = neurons;
+            Activation = actFunc;
+        }
+
+        public double[,] __call__(double[,] X)
+        {
+            // Call LinearDenseLayer of network
+            Debug.Assert(X.GetLength(0) == InputShape[0]);
+            Debug.Assert(X.GetLength(1) == InputShape[1]);
+            double[,] Y = new double[2, 2];
+            return Y;
+        }
+    }
+
+    public class ActivationLayer : Layer
+    {
+        public ActivationLayer(string name , Func<double[,]> actFunc)
+        {
+            // Constructor Method for Activation Layer Class
+            LayerName = name;
+            LayerType = "Activation Function Layer";
+            Activation = actFunc;
+        }
+
+        public double[,] __call__(double[,] X)
+        {
+            // Call LinearDenseLayer of network
+            Debug.Assert(X.GetLength(0) == InputShape[0]);
+            Debug.Assert(X.GetLength(1) == InputShape[1]);
+            double[,] Y = new double[2, 2];
+            return Y;
+        }
+    }
 }

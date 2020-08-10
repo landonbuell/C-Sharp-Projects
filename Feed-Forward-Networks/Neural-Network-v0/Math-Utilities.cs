@@ -13,12 +13,7 @@ using System.Text;
 
 namespace Neural_Network_v0
 {
-    public class MathUtils
-    {
-
-
-    }
-
+   
     public class LinearAlgebra
     {
         // Class to do basic Linear Algebra operations 

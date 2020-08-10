@@ -20,10 +20,11 @@ namespace Neural_Network_v0
             int n_classes = 2;
 
             SequentialNetwork JARVIS = new SequentialNetwork("JARVIS");
-            JARVIS.AddLayer(new InputLayer("Input",new int[2] {n_features,batchSize}));
+            JARVIS.AddLayer(new InputLayer("In", new int[2] { n_features, batchSize }));
             JARVIS.AddLayer(new LinearDenseLayer("D1", 16));
-            JARVIS.AddLayer(new LinearDenseLayer("D2", 64));
-            JARVIS.AddLayer(new LinearDenseLayer("Output", n_classes));
+            JARVIS.AddLayer(new LinearDenseLayer("D2", 16));
+            JARVIS.AddLayer(new LinearDenseLayer("Out", n_classes));
+            JARVIS.AssembleModel(new StochasticGradientDescent());
 
             JARVIS.ModelSummary();
            

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6u2OQR4TjPzHjkuoTWEDMKhHnC/aFZxJlKlWHc5YmFolngBo8BzZXIbdP3M2Gsl8A6ODD0qeF+OY33HNuLVi+w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Engima-Machine\\Engima-Machine-v1\\Engima-Machine-v1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Landon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

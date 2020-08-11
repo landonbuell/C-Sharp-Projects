@@ -19,12 +19,14 @@ namespace Neural_Network_v0
         // Init Variables for Layer Parent Class
         private double[,] _weights;
         private double[,] _biases;
+        protected string layerType;
 
         public Layer()
         {
             // Constructor Method for Layer Parent Class
             InputShape = new int[2] { 0, 0 };
             OutputShape = new int[2] { 0, 0 };
+            this
         }
 
         public int LayerNumber

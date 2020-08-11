@@ -21,6 +21,7 @@ namespace Neural_Network_v0
         {
             // Constructor Method for Sequential Model object
             NetworkName = name;
+            BatchSize = 1;
         }
 
         public SequentialNetwork(string name, int batch)
@@ -88,6 +89,7 @@ namespace Neural_Network_v0
         {
             // Assembled Model, Intialize Layers
             SolverMethod = solver;
+
         }
 
         public void ModelSummary()

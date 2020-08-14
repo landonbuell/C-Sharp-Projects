@@ -4,10 +4,10 @@ C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-N
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\bin\Debug\netcoreapp3.1\Neural-Network-v0.runtimeconfig.dev.json
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\bin\Debug\netcoreapp3.1\Neural-Network-v0.dll
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\bin\Debug\netcoreapp3.1\Neural-Network-v0.pdb
-C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.csprojAssemblyReference.cache
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.AssemblyInfoInputs.cache
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.AssemblyInfo.cs
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.csproj.CoreCompileInputs.cache
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.dll
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.pdb
 C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.genruntimeconfig.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\Feed-Forward-Networks\Neural-Network-v0\obj\Debug\netcoreapp3.1\Neural-Network-v0.csprojAssemblyReference.cache

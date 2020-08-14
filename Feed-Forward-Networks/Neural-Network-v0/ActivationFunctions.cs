@@ -7,24 +7,73 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text;
 
-namespace Neural_Network_v0
+namespace NeuralNetworkv0
 {
-    public class ActivationFunction
+
+    namespace ActivationFunctions
     {
-
-        public static double[,] Identity (double[,] X)
+        public class BaseActivationFunction
         {
-            // Identity Activation Function
-            return X;
+            // Parent Activation Functions Class
+            public string functionName;
+
+            public BaseActivationFunction()
+            {
+                // Base Constructor for Base Activation Function
+                this.functionName = "Base";
+            }
+
+            public BaseActivationFunction(int [] shape)
+            {
+                // Base Constructor for Base Activation Function
+                this.functionName = "Base";
+                ActivationShape = shape;
+            }   
+
+            public int[] ActivationShape { get; set; }
+
+            public double[,] Call(double[,] X)
+            {
+                // Call Base Activation Function
+                return X;
+            }
         }
 
-        public static double[,] ReLU (double[,] X)
-        {
-            // Rectifed Linear Unit Activation Function 
-            return X;
+        public class Identity : BaseActivationFunction
+        {           
+            // Constructors for Identity Activation Function         
+            public Identity () { functionName = "Identity"; }
+
+            public Identity(int[] shape) : base(shape) { functionName = "Identity"; }
+
+            public double[,] Call(double[,] X)
+            {
+                // Call Base Activation Function
+                return X;
+            }
         }
 
-    }
+
+        public class ReLU : BaseActivationFunction
+        {
+            // Constructors for Rectified Linear Unit Activation Function         
+            public ReLU() { functionName = "ReLU"; }
+
+            public ReLU(int[] shape) : base(shape) { functionName = "ReLU"; }
+        }
+
+        public class Softmax : BaseActivationFunction
+        {
+            // Constructors for Softmax Activation Function         
+            public Softmax() { functionName = "Softmax"; }
+
+            public Softmax(int[] shape) : base(shape) { functionName = "Softmax"; }
+        }
+
+
+
+    } 
 }

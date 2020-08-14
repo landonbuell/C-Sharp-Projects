@@ -7,11 +7,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Neural_Network_v0
+namespace NeuralNetworkv0
 {
    
     public class LinearAlgebra
@@ -27,6 +28,25 @@ namespace Neural_Network_v0
                 for (int j = 0; j < A.GetLength(1); j++)
                 {
                     B[j, i] = A[i, j];
+                }
+            }
+            return B;
+        }
+
+        public static double[,] Reshape(double[,] A, int[] newShape)
+        {
+            // Reshape 2D array in new Shaped 2D array
+            int rows = newShape[0], cols = newShape[1];
+            Debug.Assert(A.Length == ( rows * cols ));
+            double[,] B = new double[rows, cols];
+            double[] _A = To1DArray(A);
+            int k = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0 ; j < cols ; j++)
+                {
+                    B[i, j] = _A[k];
+                    k += 1;
                 }
             }
             return B;
@@ -96,5 +116,52 @@ namespace Neural_Network_v0
             }
             return C;
         }
+
+        public static double[,] HadamardProduct (double[,] A, double[,] B)
+        {
+            // Compute Element-Wise Product of Array A and Array B
+            Debug.Assert(A.GetLength(0) == B.GetLength(0));
+            Debug.Assert(A.GetLength(1) == B.GetLength(1));
+            double[,] C = new double[A.GetLength(0), A.GetLength(0)];
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    C[i, j] = A[i,j] * B[i,j];
+                }
+            }
+            return C;
+        }
+
+        public static double[,] MatrixAdd(double[,] A, double[,] B)
+        {
+            // Compute Element-Wise Addition of Array A and Array B
+            Debug.Assert(A.GetLength(0) == B.GetLength(0));
+            Debug.Assert(A.GetLength(1) == B.GetLength(1));
+            double[,] C = new double[A.GetLength(0), A.GetLength(0)];
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    C[i, j] = A[i, j] + B[i, j];
+                }
+            }
+            return C;
+        }
+
+        public static double[,] ExpandColumn (double[,] A, int cols)
+        {
+            // Expand Column vecotor into Matrix of identical Columns
+            Debug.Assert(A.GetLength(1) == 1);
+            double[,] B = new double[A.GetLength(0), cols];
+            for (int i = 0; i < A.GetLength(1); i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    B[i, j] = A[i, 0];
+                }
+            }
+            return B;
+         }
     }
 }

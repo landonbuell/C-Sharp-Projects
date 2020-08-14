@@ -8,7 +8,13 @@
 using System;
 using System.Numerics;
 
-namespace Neural_Network_v0
+using NeuralNetworkv0.Layers;
+using NeuralNetworkv0.ActivationFunctions;
+using NeuralNetworkv0.Models;
+using NeuralNetworkv0.Optimizers;
+using NeuralNetworkv0.Initializers;
+
+namespace NeuralNetworkv0
 {
     class Program
     {
@@ -19,13 +25,17 @@ namespace Neural_Network_v0
             int n_features = 4;
             int n_classes = 2;
 
-            SequentialNetwork JARVIS = new SequentialNetwork("JARVIS");
-            JARVIS.AddLayer(new InputLayer("In", new int[2] { n_features, batchSize }));
-            JARVIS.AddLayer(new LinearDenseLayer("D1", 16));
-            JARVIS.AddLayer(new LinearDenseLayer("Out", n_classes));
-            JARVIS.AssembleModel(new StochasticGradientDescent());
+            Models.SequentialNetwork JARVIS = new Models.SequentialNetwork("JARVIS");
+
+            JARVIS.AddLayer(new InputLayer("In", n_features, batchSize));
+            JARVIS.AddLayer(new LinearDenseLayer("D1", 16, new ReLU() ));
+            JARVIS.AddLayer(new LinearDenseLayer("D2", 32, new ReLU() ));
+            JARVIS.AddLayer(new LinearDenseLayer("D3", 16, new ReLU() ));
+            JARVIS.AddLayer(new LinearDenseLayer("Out", n_classes, new Softmax() ));
 
             JARVIS.ModelSummary();
+
+           
            
         }
     }

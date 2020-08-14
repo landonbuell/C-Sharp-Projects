@@ -11,202 +11,219 @@ using System.Diagnostics;
 using System.Reflection.Metadata;
 using System.Text;
 
-namespace Neural_Network_v0
+using NeuralNetworkv0.Models;
+using NeuralNetworkv0.Optimizers;
+using NeuralNetworkv0.Initializers;
+using NeuralNetworkv0.ActivationFunctions;
+using System.Runtime.CompilerServices;
+
+namespace NeuralNetworkv0
 {
 
-    public class Layer
+    namespace Layers
     {
-        // Init Variables for Layer Parent Class
-        private double[,] _weights;
-        private double[,] _biases;
-        protected string layerType;
-
-        public Layer()
+        public class BaseLayer
         {
-            // Constructor Method for Layer Parent Class
-            InputShape = new int[2] { 0, 0 };
-            OutputShape = new int[2] { 0, 0 };
-            this
-        }
+            // Init Variables for Layer Parent Class
+            public int[] _weightShape;
+            public int[] _biasShape;
+            private double[,] _weights;
+            private double[,] _biases;
 
-        public int LayerNumber
-        {
-            // Get or Set Layer Number Index
-            get; set;
-        }
-
-        public string LayerName
-        {
-            // Get or Set Layer Name value
-            get; set;
-        }
-
-        public string LayerType
-        {
-            // Get or Set the Layer Type
-            get; set;
-        }
-
-        public int Neurons
-        {
-            // Get or Set the Number of Neurons in the Dense Layer
-            get; set;
-        }
-
-        public int[] InputShape 
-        {
-            // Get or Set Input Shape of Layer Object
-            get; set;
-        }
-
-        public int[] OutputShape
-        {
-            // Get or Set Input Shape of Layer Object
-            get; set;
-        }
-
-        public Func<double[,]> Activation
-        {
-            // Get or Set Activation Function for Layer
-            get; set;
-        }
-
-        public double[,] Weights
-        {
-            // Get or Set weight matrix elements
-            get { return this._weights; }
-            set
+            public BaseLayer(string name)
             {
-                // Ensure Dimensions Match Before setting Input
-                Debug.Assert(value.GetLength(0) == OutputShape[0]);
-                Debug.Assert(value.GetLength(1) == InputShape[0]);
-                this._weights = value;
+                // Constructor Method for Layer Parent Class
+                LayerName = name;
+                LayerType = "Base Layer";
+                InputShape = new int[2] { 0, 0 };
+                OutputShape = new int[2] { 0, 0 };
+                Activation = new Identity(OutputShape);
+            }
+
+            public BaseLayer(string name, BaseActivationFunction actFunc)
+            {
+                // Constructor Method for Layer Parent Class w/ Activation
+                LayerName = name;
+                LayerType = "Base Layer";
+                InputShape = new int[2] { 0, 0 };
+                OutputShape = new int[2] { 0, 0 };
+                Activation = actFunc;
+                Activation.ActivationShape = OutputShape;
+            }
+
+            public int LayerNumber { get; set; }
+
+            public string LayerName { get; set; }
+
+            public string LayerType { get; set; }
+
+            public int[] InputShape { get; set; }
+
+            public int[] OutputShape { get; set; }
+
+            public BaseActivationFunction Activation { get; set; }
+
+            public double[,] Weights
+            {
+                // Get or Set weight matrix elements
+                get { return this._weights; }
+                set
+                {
+                    // Ensure Dimensions Match Before setting Input
+                    Debug.Assert(value.GetLength(0) == OutputShape[0]);
+                    Debug.Assert(value.GetLength(1) == InputShape[0]);
+                    this._weights = value;
+                }
+            }
+
+            public double[,] Biases
+            {
+                // Get or Set weight matrix elements
+                get { return this._biases; }
+                set
+                {
+                    // Ensure Dimensions Match Before setting Input
+                    Debug.Assert(value.GetLength(0) == OutputShape[0]);
+                    Debug.Assert(value.GetLength(1) == 1);
+                    this._biases = value;
+                }
+            }
+
+            public void IntializeLayerParams()
+            {
+                // Initialize Layer Parameters Before When Model is Assemled
+
+            }
+
+            public double[,] CallLayer(double[,] X)
+            {
+                // Call Layer w/ Input X
+                return X;
+            }
+
+        }
+
+        public class InputLayer : BaseLayer
+        {
+            public InputLayer(string name, int features , int batchSize=1) : base(name)
+            {
+                // Constructor Method for InputLayer Object
+                LayerType = "Input Layer";
+                InputShape = new int[] { features, batchSize };
+                OutputShape = InputShape;
+            }
+
+            public InputLayer(string name, int features, 
+                BaseActivationFunction actFunc,int batchSize = 1) : base(name,actFunc)
+            {
+                // Constructor Method for InputLayer Object
+                LayerType = "Input Layer";
+                InputShape = new int[] { features, batchSize };
+                OutputShape = InputShape;
+            }
+
+            public double[,] __call__(double[,] X)
+            {
+                // Call InputLayer of Network
+                Debug.Assert(X.GetLength(0) == InputShape[0]);
+                Debug.Assert(X.GetLength(1) == InputShape[1]);
+                return X;
+            }
+
+            public double[,] CallLayer(double[,] X)
+            {
+                // Call Layer w/ Input X
+                Debug.Assert(X.GetLength(0) == InputShape[0]);
+                Debug.Assert(X.GetLength(1) == InputShape[1]);
+                double[,] Y = Activation.Call(X);
+                return Y;
             }
         }
 
-        public double[,] Biases
+        public class LinearDenseLayer : BaseLayer
         {
-            // Get or Set weight matrix elements
-            get { return this._biases; }
-            set
+
+            public LinearDenseLayer(string name, int neurons) : base(name)
             {
-                // Ensure Dimensions Match Before setting Input
-                Debug.Assert(value.GetLength(0) == OutputShape[0]);
-                Debug.Assert(value.GetLength(1) == 1);
-                this._biases = value;
+                // Constructor Method for Linear Dense Layer
+                LayerType = "Linear Dense Layer";
+                Neurons = neurons;
+                OutputShape = new int[2] { Neurons, InputShape[1] };
+            }
+
+            public LinearDenseLayer(string name, int neurons, 
+                BaseActivationFunction actFunc) : base(name,actFunc)
+            {
+                // Constructor Method for Linear Dense Layer
+                LayerType = "Linear Dense Layer";
+                Neurons = neurons;
+                OutputShape = new int[2] { Neurons, InputShape[1] };
+            }
+
+            public int Neurons { get; set; }
+
+            public double[,] CallLayer (double[,] X)
+            {
+                // Call LinearDenseLayer of network
+                Debug.Assert(X.GetLength(0) == InputShape[0]);
+                Debug.Assert(X.GetLength(1) == InputShape[1]);
+                double[,] _W = LinearAlgebra.MatrixMultiply(Weights, X);
+                double[,] _b = LinearAlgebra.ExpandColumn(Biases, OutputShape[1]);
+                double[,] _linearActivation = LinearAlgebra.MatrixAdd(_W, _b);
+                double[,] Y = Activation.Call(_linearActivation);
+                return Y;
             }
         }
 
-        public void IntializeLayerParams()
+        public class QuadraticDenseLayer : BaseLayer
         {
-            // Initialize Layer Parameters Before When Model is Assemled
 
+            private double[,] _weights2;
+
+            public QuadraticDenseLayer(string name, int neurons) : base(name)
+            {
+                // Constructor Method for Quadratic Dense Layer
+                LayerType = "Linear Dense Layer";
+                Neurons = neurons;
+            }
+
+            public QuadraticDenseLayer(string name, int neurons,
+                BaseActivationFunction actFunc) : base(name,actFunc)
+            {
+                // Constructor Method for Quadratic Dense Layer
+                LayerType = "Linear Dense Layer";
+                Neurons = neurons;
+            }
+
+
+            public int Neurons { get; set; }
+
+            public double[,] __call__(double[,] X)
+            {
+                // Call LinearDenseLayer of network
+                Debug.Assert(X.GetLength(0) == InputShape[0]);
+                Debug.Assert(X.GetLength(1) == InputShape[1]);
+                double[,] Y = new double[2, 2];
+                return Y;
+            }
         }
 
-    }
-
-    public class InputLayer : Layer
-    {
-        public InputLayer(string name, int[] inShape)
+        public class ActivationLayer : BaseLayer
         {
-            // Constructor Method for InputLayer Object
-            LayerName = name;
-            LayerType = "Input Layer";
-            InputShape = inShape;
-            OutputShape = inShape;
+            public ActivationLayer(string name, BaseActivationFunction actFunc) : base(name,actFunc)
+            {
+                // Constructor Method for Activation Layer Class
+                LayerType = "Activation Function Layer";
+            }
 
-        }
-
-        public double[,] __call__(double[,] X )
-        {
-            // Call InputLayer of Network
-            Debug.Assert(X.GetLength(0) == InputShape[0]);
-            Debug.Assert(X.GetLength(1) == InputShape[1]);
-            return X;
-        }
-    }
-
-    public class LinearDenseLayer : Layer
-    {
-
-        public LinearDenseLayer(string name, int neurons)
-        {
-            // Constructor Method for Linear Dense Layer
-            LayerName = name;
-            LayerType = "Linear Dense Layer";
-            Neurons = neurons;
-            OutputShape = new int[2] { Neurons, InputShape[1] };
-        }
-
-        public LinearDenseLayer(string name, int neurons, Func<double[,]> actFunc)
-        {
-            // Constructor Method for LinearDenseLayer
-            LayerName = name;
-            LayerType = "Linear Dense Layer";
-            Neurons = neurons;
-            OutputShape = new int[2] { Neurons, InputShape[1] };
-            Activation = actFunc;
-        }
-
-        public double[,] __call__(double[,] X)
-        {
-            // Call LinearDenseLayer of network
-            Debug.Assert(X.GetLength(0) == InputShape[0]);
-            Debug.Assert(X.GetLength(1) == InputShape[1]);
-            double[,] Y = new double[2,2];
-            return Y;
-        }
-    }
-
-    public class QuadraticDenseLayer : Layer
-    {
-
-        private double[,] _weights2;
-
-        public QuadraticDenseLayer(string name, int neurons)
-        {
-            // Constructor Method for Quadratic Dense Layer
-            LayerName = name;
-            LayerType = "Linear Dense Layer";
-            Neurons = neurons;
-        }
-
-        public QuadraticDenseLayer(string name, int neurons, Func<double[,]> actFunc)
-        {
-            // Constructor Method for LinearDenseLayer
-            LayerName = name;
-            LayerType = "Linear Dense Layer";
-            Neurons = neurons;
-            Activation = actFunc;
-        }
-
-        public double[,] __call__(double[,] X)
-        {
-            // Call LinearDenseLayer of network
-            Debug.Assert(X.GetLength(0) == InputShape[0]);
-            Debug.Assert(X.GetLength(1) == InputShape[1]);
-            double[,] Y = new double[2, 2];
-            return Y;
-        }
-    }
-
-    public class ActivationLayer : Layer
-    {
-        public ActivationLayer(string name , Func<double[,]> actFunc)
-        {
-            // Constructor Method for Activation Layer Class
-            LayerName = name;
-            LayerType = "Activation Function Layer";
-            Activation = actFunc;
-        }
-
-        public double[,] __call__(double[,] X)
-        {
-            // Call LinearDenseLayer of network
-            Debug.Assert(X.GetLength(0) == InputShape[0]);
-            Debug.Assert(X.GetLength(1) == InputShape[1]);
-            double[,] Y = new double[2, 2];
-            return Y;
+            public double[,] CallLayer (double[,] X)
+            {
+                // Call Activation Layer of network
+                Debug.Assert(X.GetLength(0) == InputShape[0]);
+                Debug.Assert(X.GetLength(1) == InputShape[1]);
+                double[,] Y = Activation.Call(X);
+                return Y;
+            }
         }
     }
 }

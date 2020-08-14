@@ -4,56 +4,56 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Neural_Network_v0
+using NeuralNetworkv0.Layers;
+using NeuralNetworkv0.Models;
+using NeuralNetworkv0.Initializers;
+
+namespace NeuralNetworkv0
 {
-    public class Optimizer
+
+    namespace Optimizers
     {
-        // Parent Class , All Optimizers Inherit from
-
-        public Optimizer()
+        public class BaseOptimizer
         {
-            // Default Constructor Method for Optimizer Class
-            LearningRate = 0.9;
+            // Parent Class , All Optimizers Inherit from
+
+            public BaseOptimizer()
+            {
+                // Default Constructor Method for Optimizer Class
+                LearningRate = 0.9;
+            }
+
+            public BaseOptimizer(double rate)
+            {
+                // Constructor Method for Optimizer Class   
+                LearningRate = rate;
+            }
+
+            public string OptimizerName { get; set; }
+
+            public double LearningRate { get; set; }
+
+            public void BackPropagate(List<Layers.BaseLayer> modelLayers)
+            {
+                // Backward - Propagate through Layers Sequential Network Model
+
+            }
         }
 
-        public Optimizer(double rate)
+        public class StochasticGradientDescent : BaseOptimizer
         {
-            // Constructor Method for Optimizer Class   
-            LearningRate = rate;
-        }
+            public StochasticGradientDescent()
+            {
+                // Default Constructor for Stochastic Gradient Descent Class
+                OptimizerName = "Stochastic Gradient Descent";
+            }
 
-        public string OptimizerName
-        {
-            // get or Set Optimizer Method Name
-            get; set;
-        }
+            public StochasticGradientDescent(double rate) : base(rate)
+            {
+                // Constructor Method for Stochastic Gradient Descent Class
+                OptimizerName = "Stochastic Gradient Descent";
+            }
 
-        public double LearningRate
-        {
-            // Get or Set the Optimizer Learning Rate
-            get; set;
         }
-
-        public void BackPropagate(List<Layer> modelLayers)
-        {
-            // Backward - Propagate through Layers Sequential Network Model
-      
-        }
-    }
-
-    public class StochasticGradientDescent : Optimizer
-    {
-        public StochasticGradientDescent()
-        {
-            // Default Constructor for Stochastic Gradient Descent Class
-            OptimizerName = "Stochastic Gradient Descent";
-        }
-
-        public StochasticGradientDescent (double rate) : base(rate)
-        {
-            // Constructor Method for Stochastic Gradient Descent Class
-            OptimizerName = "Stochastic Gradient Descent";
-        }
-
     }
 }

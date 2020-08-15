@@ -35,7 +35,7 @@ namespace NeuralNetworkv0
 
             public int[] ActivationShape { get; set; }
 
-            public double[,] Call(double[,] X)
+            public double[,] CallFunc (double[,] X)
             {
                 // Call Base Activation Function
                 return X;
@@ -49,7 +49,7 @@ namespace NeuralNetworkv0
 
             public Identity(int[] shape) : base(shape) { functionName = "Identity"; }
 
-            public double[,] Call(double[,] X)
+            public new double[,] CallFunc (double[,] X)
             {
                 // Call Base Activation Function
                 return X;
@@ -63,6 +63,12 @@ namespace NeuralNetworkv0
             public ReLU() { functionName = "ReLU"; }
 
             public ReLU(int[] shape) : base(shape) { functionName = "ReLU"; }
+
+            public new double[,] CallFunc(double[,] X)
+            {
+                // Call ReLU Activation Function
+                return X;
+            }
         }
 
         public class Softmax : BaseActivationFunction
@@ -71,6 +77,12 @@ namespace NeuralNetworkv0
             public Softmax() { functionName = "Softmax"; }
 
             public Softmax(int[] shape) : base(shape) { functionName = "Softmax"; }
+
+            public new double[,] CallFunc(double[,] X)
+            {
+                // Call Softmax Activation Function
+                return X;
+            }
         }
 
 

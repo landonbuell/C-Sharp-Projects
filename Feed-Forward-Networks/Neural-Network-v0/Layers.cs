@@ -122,20 +122,12 @@ namespace NeuralNetworkv0
                 OutputShape = InputShape;
             }
 
-            public double[,] __call__(double[,] X)
-            {
-                // Call InputLayer of Network
-                Debug.Assert(X.GetLength(0) == InputShape[0]);
-                Debug.Assert(X.GetLength(1) == InputShape[1]);
-                return X;
-            }
-
-            public double[,] CallLayer(double[,] X)
+            public new double[,] CallLayer(double[,] X)
             {
                 // Call Layer w/ Input X
                 Debug.Assert(X.GetLength(0) == InputShape[0]);
                 Debug.Assert(X.GetLength(1) == InputShape[1]);
-                double[,] Y = Activation.Call(X);
+                double[,] Y = Activation.CallFunc(X);
                 return Y;
             }
         }
@@ -162,7 +154,7 @@ namespace NeuralNetworkv0
 
             public int Neurons { get; set; }
 
-            public double[,] CallLayer (double[,] X)
+            public new double[,] CallLayer (double[,] X)
             {
                 // Call LinearDenseLayer of network
                 Debug.Assert(X.GetLength(0) == InputShape[0]);
@@ -198,14 +190,6 @@ namespace NeuralNetworkv0
 
             public int Neurons { get; set; }
 
-            public double[,] __call__(double[,] X)
-            {
-                // Call LinearDenseLayer of network
-                Debug.Assert(X.GetLength(0) == InputShape[0]);
-                Debug.Assert(X.GetLength(1) == InputShape[1]);
-                double[,] Y = new double[2, 2];
-                return Y;
-            }
         }
 
         public class ActivationLayer : BaseLayer
@@ -216,7 +200,7 @@ namespace NeuralNetworkv0
                 LayerType = "Activation Function Layer";
             }
 
-            public double[,] CallLayer (double[,] X)
+            public new double[,] CallLayer (double[,] X)
             {
                 // Call Activation Layer of network
                 Debug.Assert(X.GetLength(0) == InputShape[0]);

@@ -1,0 +1,15 @@
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\bin\Debug\MusicVisualizer.exe.config
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\bin\Debug\MusicVisualizer.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\bin\Debug\MusicVisualizer.pdb
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.csprojAssemblyReference.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MainWindow.g.cs
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\App.g.cs
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer_MarkupCompile.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer_MarkupCompile.lref
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MainWindow.baml
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.g.resources
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.Properties.Resources.resources
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.csproj.GenerateResource.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\MusicVisualizer\obj\Debug\MusicVisualizer.pdb

@@ -1,0 +1,7 @@
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\bin\Debug\AudioReadTest.exe.config
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\bin\Debug\AudioReadTest.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\bin\Debug\AudioReadTest.pdb
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\obj\Debug\AudioReadTest.csprojAssemblyReference.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\obj\Debug\AudioReadTest.csproj.CoreCompileInputs.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\obj\Debug\AudioReadTest.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\MusicVisualizer\AudioReadTest\obj\Debug\AudioReadTest.pdb

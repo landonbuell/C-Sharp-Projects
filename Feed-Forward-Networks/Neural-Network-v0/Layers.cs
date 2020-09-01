@@ -127,7 +127,7 @@ namespace NeuralNetworkv0
                 // Call Layer w/ Input X
                 Debug.Assert(X.GetLength(0) == InputShape[0]);
                 Debug.Assert(X.GetLength(1) == InputShape[1]);
-                double[,] Y = Activation.CallFunc(X);
+                double[,] Y = Activation.Call(X);
                 return Y;
             }
         }

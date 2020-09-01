@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uSW8rorFKAaoQ6qrKuVP2dS+KDnV3vVTUXGNVtY4u/k/JNT2dQuwTeaMn6X1FpJ/TyrkOibm0EdZlw3AB5XmPg==",
+  "dgSpecHash": "uzpJdlnrzVvRDDmupw6eKiwn/8ChCXnTLEyOKs9tLdH0wHDxX8+yf0U+4/yf+tvwJkTEI1l2mHqUpZOf9mKi0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Feed-Forward-Networks\\Neural-Network-v0\\Neural-Network-v0.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Landon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

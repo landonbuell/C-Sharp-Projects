@@ -1,0 +1,13 @@
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.exe
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.deps.json
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.runtimeconfig.json
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.runtimeconfig.dev.json
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.dll
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\bin\Debug\netcoreapp3.1\PandemicModel.pdb
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.csprojAssemblyReference.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.AssemblyInfoInputs.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.AssemblyInfo.cs
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.csproj.CoreCompileInputs.cache
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.dll
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.pdb
+C:\Users\Landon\Documents\GitHub\C-Sharp-Projects\PandemicModeling\PandemicModel\obj\Debug\netcoreapp3.1\PandemicModel.genruntimeconfig.cache

@@ -11,8 +11,7 @@ namespace PandemicModel
         public float infectionRadius;
         public decimal infectionChance;
         public int infectionDuration;
-
-        public int initialInfected;
+        
 
 
     }

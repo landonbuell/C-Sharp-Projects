@@ -12,14 +12,14 @@ using System.Text;
 
 namespace PandemicModel
 {
-    public class BaseVector
+    public class BaseCarrier
     {
         // Class represents a Vector - a disease carrying organism: can be S/I/R
         // Suceptible = 0
         // Infected = 1
         // Recovered = 2
 
-        public BaseVector(string id)
+        public BaseCarrier(string id)
         {
             // Constructor Method for Individual Object
             Condition = 0;

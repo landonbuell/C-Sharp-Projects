@@ -18,7 +18,7 @@ namespace PandemicModel
 
         public string name;
 
-        private List<BaseVector> vectors;
+        private List<BaseCarrier> carriers;
         private List<Location> locations;
 
         public int totalVectors;
@@ -29,7 +29,7 @@ namespace PandemicModel
             // Constructor Method for World Board
             this.name = name;
 
-            this.vectors = new List<BaseVector>();
+            this.carriers = new List<BaseCarrier>();
             this.locations = new List<Location>();
 
             this.totalVectors = 0;
@@ -43,10 +43,10 @@ namespace PandemicModel
             totalLocations += 1;
         }
 
-        public void AddVector (BaseVector newVector)
+        public void AddVector (BaseCarrier newVector)
         {
             // Add new Vector to World
-            vectors.Add(newVector);
+            carriers.Add(newVector);
             totalVectors += 1;
         }
 
@@ -55,7 +55,7 @@ namespace PandemicModel
             // Add A integer number of vectors into the World
             for (int i = 0; i < nVectors; i++)
             {
-                AddVector(new BaseVector(Convert.ToString(totalVectors)));
+                AddVector(new BaseCarrier(Convert.ToString(totalVectors)));
             }   
         }
 
@@ -66,11 +66,11 @@ namespace PandemicModel
             set { locations = value; }
         }
 
-        public List<BaseVector> WorldVectors
+        public List<BaseCarrier> WorldCarriers
         {
             // Get or Set Method of all vecotors in the world
-            get { return vectors; }
-            set { vectors = value; }
+            get { return carriers; }
+            set { carriers = value; }
         }
     }
 

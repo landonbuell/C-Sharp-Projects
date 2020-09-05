@@ -1,118 +1,34 @@
-﻿/*
- * Landon Buell
- * Pandemic Modeling
- * Location Based Objects
- * 1 September 2020
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PandemicModel
 {
-
-    public class WorldBoard
+    public class BaseLocation
     {
-        // World Board Instance Holds all People, Locations, etc.
-
         public string name;
+        public int xloc, yloc;
+        public int width, height;
 
-        private List<BaseCarrier> carriers;
-        private List<Location> locations;
+        public List<BaseIndiviual> individuals;
 
-        public int totalVectors;
-        public int totalLocations;
-
-        public WorldBoard(string name)
+        public BaseLocation(string name, int[] xyLoc, int[] shape )
         {
-            // Constructor Method for World Board
+            // Constructor Method for Base Individual Class
             this.name = name;
+            this.individuals = new List<BaseIndiviual>();
 
-            this.carriers = new List<BaseCarrier>();
-            this.locations = new List<Location>();
-
-            this.totalVectors = 0;
-            this.totalLocations = 0;
+            this.xloc = xyLoc[0];
+            this.xloc = xyLoc[1];
+            this.width = shape[0];
+            this.height = shape[1];
         }
 
-        public void AddLocation (Location newLocation)
+        public void AddnIndividuals(int number)
         {
-            // Add New Location to World
-            locations.Add(newLocation);
-            totalLocations += 1;
+
         }
 
-        public void AddVector (BaseCarrier newVector)
-        {
-            // Add new Vector to World
-            carriers.Add(newVector);
-            totalVectors += 1;
-        }
-
-        public void AddnVectors (int nVectors)
-        {
-            // Add A integer number of vectors into the World
-            for (int i = 0; i < nVectors; i++)
-            {
-                AddVector(new BaseCarrier(Convert.ToString(totalVectors)));
-            }   
-        }
-
-        public List<Location> WorldLocations
-        {
-            // Get or Set Method of Locations in the world
-            get { return locations; }
-            set { locations = value; }
-        }
-
-        public List<BaseCarrier> WorldCarriers
-        {
-            // Get or Set Method of all vecotors in the world
-            get { return carriers; }
-            set { carriers = value; }
-        }
-    }
-
-    public class Location
-    {
-        // Parent Location Class
-        public string name;
-        public string locationType;
-
-        private List<BaseVector> vectors;
-
-        public int totalVectors;
-        public int totalLocations;
-
-        public int height, width;
-        public int xpos, ypos;
-
-
-        public Location(string name, int[] position, int[] size)
-        {
-            // Constructor Method for Location Parent Object
-            this.name = name;
-            this.locationType = "Generic";
-
-            this.vectors = new List<BaseVector>();
-
-            // Set Size of Location Object
-            this.width = size[0];
-            this.height = size[1];
-
-            // Set position of Location Object
-            this.xpos = position[0];
-            this.ypos = position[1];
-            
-        }
-
-        public List<BaseVector> LocationVectors
-        {
-            // Get or Set Method of all vecotors in the world
-            get { return vectors; }
-            set { vectors = value; }
-        }
 
     }
 }

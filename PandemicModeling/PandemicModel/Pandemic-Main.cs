@@ -16,8 +16,8 @@ namespace PandemicModel
         {
 
             // Create the World, Add People and Locations
-            WorldBoard WorldSystem = new WorldBoard("Earth");
-            WorldSystem.AddnVectors(100);
+            SystemModel WorldSystem = new SystemModel("Earth");
+            
 
             
 

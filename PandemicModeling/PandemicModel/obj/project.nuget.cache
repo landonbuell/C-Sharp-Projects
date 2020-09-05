@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0WhHJMVcXB38RtyMlNG2ETQU9RjqXlN8KmUz0X5kErkDyL+BTmavoe4DD2zTSFKhe0UPe4/JiaEdiep8qE4cNQ==",
+  "dgSpecHash": "QdqSkw++ctpRKbR0cjQ43WVpGaqxTU/hALPbxGbfdfr9q8Mi4V1l5a1oYeIMrR3GUeaEHdur/CQBh1CwlEpJ+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\PandemicModeling\\PandemicModel\\PandemicModel.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Landon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

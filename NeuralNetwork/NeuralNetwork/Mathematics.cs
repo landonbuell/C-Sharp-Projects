@@ -107,9 +107,32 @@ namespace NeuralNetwork
             }
         }
 
-        class BaseActivationFunction
+        public class BaseActivationFunction
         {
             // Parent Activation Function Class
+            public int[,] shape;
+
+            public double[,] CallFunc( double [,] X)
+            {
+                // Call this Activation Function
+                return X;
+            }
+
+            public double CallDeriv (double[,] X)
+            {
+                // Call this Activation Function Derivative
+                return 1.0;
+            }
+
+        }
+
+        public class IdentityActivationFunction : BaseActivationFunction
+        {
+            // Identity ActivatioN Function
+
+            
+
+            private IdentityActivationFunction
         }
 
     }

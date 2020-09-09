@@ -11,13 +11,14 @@ using System.Text;
 
 using NeuralNetwork.Layers;
 using NeuralNetwork.MathematicalUtilities;
+using NeuralNetwork.Optimizers;
+using NeuralNetwork.Losses;
 
 namespace NeuralNetwork
 {
     namespace Models
     {
-
-        class BaseModel
+        public class BaseModel
         {
             // Parent Model Class Type
             public string modelName;
@@ -25,6 +26,14 @@ namespace NeuralNetwork
             public List<BaseLayer> modelLayers;
             public int modelDepth;
 
+            public BaseModel(string name)
+            {
+                // Constructor Method for Base Model parent Class
+                this.modelName = name;
+                this.modelType = "Parent";
+                this.modelLayers = new List<BaseLayer>();
+                this.modelDepth = modelLayers.Count;
+            }
 
             protected List<BaseLayer> GetLayers()
             {
@@ -34,15 +43,26 @@ namespace NeuralNetwork
             protected void AddLayer (BaseLayer newLayer)
             {
                 // Add New Layer to Model Layer Stack
-                if (modelDepth == 0) && (newLayer.) 
+                
 
             }
-            
+
+            protected List<BaseLayer> GetLayers()
+            {
+                // Get list of layers in order
+                return modelLayers;
+            }
+
+            protected CompileModel()
+            {
+                // Compile
+            }
+
         }
 
 
 
-        class FeedForward : BaseModel
+        public class FeedForward : BaseModel
         {
             // Standard Sequential or Feed-Forward Model
 

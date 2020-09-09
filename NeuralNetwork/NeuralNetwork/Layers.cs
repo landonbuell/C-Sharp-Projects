@@ -17,29 +17,40 @@ namespace NeuralNetwork
     namespace Layers
     {
 
-        class BaseLayer
+        public class BaseLayer
         {
             // Parent Layer Class Type
             public string layerName;
             public string layerType;
             public int layerNumber;
-            public int[,] inputShape;
-            public int[,] outputShape;
-
-            protected int[,] weightShape;
-            protected int[,] biasShape;
 
             protected BaseActivationFunction ActFunc;
             protected double[,] W;
             protected double[,] b;
 
+            protected BaseLayer(string name, BaseActivationFunction actFunc)
+            {
+                // Constructor Method for BaseLayer Object
+                this.layerName = name;
+                this.ActFunc = actFunc;
+            }
+
             protected BaseLayer(string name)
             {
                 // Constructor Method for BaseLayer Object
                 this.layerName = name;
+                this.ActFunc = IdentityActivationFunction();
             }
 
-            protected double[,] Call(double[,] X)
+            public int[,] InputShape { get; set; }
+
+            public int[,] OutputShape { get; set; }
+
+            public int[,] WeightShape { get; set; }
+
+            public int[,] BiasShape { get; set; }
+
+            public double[,] Call(double[,] X)
             {
                 // Call Layer w/ Input X
                 return X;
@@ -47,9 +58,10 @@ namespace NeuralNetwork
 
             
             
+            
         }
 
-        class InputLayer : BaseLayer
+        public class InputLayer : BaseLayer
         {
             // Input Layer Object
 
@@ -58,12 +70,19 @@ namespace NeuralNetwork
                 // Constructor Method for Input Layer 
                 this.layerType = "Input";
                 this.layerNumber = 0;
-                this.inputShape = shape;
+                InputShape = shape;
+                OutputShape = shape;
+            }
+
+            public override double[,] Call (double[,] X)
+            {
+                // Call Input Layer Object
+                return X;
             }
 
         }
 
-        class DenseLayer : BaseLayer
+        public class DenseLayer : BaseLayer
         {
             // Standard Dense Layer
             private int neurons;

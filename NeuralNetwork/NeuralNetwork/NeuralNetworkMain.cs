@@ -14,7 +14,7 @@ namespace NeuralNetwork
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            FeedForward JARVIS = new FeedForward("JARVIS");
         }
     }
 }

@@ -18,7 +18,7 @@ namespace NeuralNetwork
     namespace Optimizers
     {
 
-        class BaseOptimzier
+        public class BaseOptimzier
         {
             // Parent Class For Optimzier Algorithms
             private BaseModel model;
@@ -26,7 +26,7 @@ namespace NeuralNetwork
 
             public string optimizerName;
 
-            private BaseOptimzier (BaseModel model, double LR)
+            public BaseOptimzier (BaseModel model, double LR)
             {
                 // Constructor Method for Parent Optimzer
                 this.model = model;
@@ -34,10 +34,7 @@ namespace NeuralNetwork
                 this.optimizerName = "Parent";
             }
 
-            private List<BaseLayer> GetModelLayers()
-            {
-                List<BaseLayer> = model.G
-            }
+            
 
             protected void BackPropagate()
             {
@@ -47,11 +44,11 @@ namespace NeuralNetwork
 
         }
 
-        class StochasticGradientDescent : BaseOptimzier
+        public class StochasticGradientDescent : BaseOptimzier
         {
             // Stochastic Gradient Descent Optimizer
 
-            private StochasticGradientDescent (BaseModel model, double LR) : base(model, LR)
+            public StochasticGradientDescent (BaseModel model, double LR) : base(model, LR)
             {
                 // Constructor For 
             }

@@ -10,13 +10,13 @@ using System.Collections.Generic;
 using System.Text;
 
 using NeuralNetwork.Models;
+using NeuralNetwork.ActivationFunctions;
 using NeuralNetwork.MathematicalUtilities;
 
 namespace NeuralNetwork
 {
     namespace Layers
     {
-
         public class BaseLayer
         {
             // Parent Layer Class Type
@@ -24,60 +24,63 @@ namespace NeuralNetwork
             public string layerType;
             public int layerNumber;
 
-            protected BaseActivationFunction ActFunc;
-            protected double[,] W;
-            protected double[,] b;
+            public BaseActivationFunction actFunc;
+            public double[,] W;
+            public double[,] b;
 
-            protected BaseLayer(string name, BaseActivationFunction actFunc)
+            public BaseLayer(string name, BaseActivationFunction actFunc)
             {
                 // Constructor Method for BaseLayer Object
                 this.layerName = name;
-                this.ActFunc = actFunc;
+                this.actFunc = actFunc;
             }
 
-            protected BaseLayer(string name)
+            public int[] InputShape { get; set; }
+
+            public int[] OutputShape { get; set; }
+
+            public int[] WeightShape { get; set; }
+
+            public int[] BiasShape { get; set; }
+
+            public void InitLayer()
             {
-                // Constructor Method for BaseLayer Object
-                this.layerName = name;
-                this.ActFunc = IdentityActivationFunction();
+                // Initialize Layer, Generate Needed Shapes & Arrays
+                
             }
 
-            public int[,] InputShape { get; set; }
 
-            public int[,] OutputShape { get; set; }
+            public double[,] GenerateWeights()
+            {
+                // Generate Weighting Matrix
+                throw new NotImplementedException();
+            }
 
-            public int[,] WeightShape { get; set; }
+            public double[,] GenerateBiases()
+            {
+                // Generate Bias Vector
+                throw new NotImplementedException();
+            }
 
-            public int[,] BiasShape { get; set; }
-
-            public double[,] Call(double[,] X)
+            public double[,] CallLayer (double[,] X)
             {
                 // Call Layer w/ Input X
                 return X;
-            }
-
-            
-            
-            
+            }    
         }
 
         public class InputLayer : BaseLayer
         {
             // Input Layer Object
 
-            private InputLayer(string name, int[,] shape) : base(name)
+            public InputLayer(string name, int[] shape) : base(name,new Identity())
             {
                 // Constructor Method for Input Layer 
-                this.layerType = "Input";
+                this.layerType = "Input-Layer";
                 this.layerNumber = 0;
                 InputShape = shape;
                 OutputShape = shape;
-            }
 
-            public override double[,] Call (double[,] X)
-            {
-                // Call Input Layer Object
-                return X;
             }
 
         }
@@ -87,19 +90,38 @@ namespace NeuralNetwork
             // Standard Dense Layer
             private int neurons;
 
-            private DenseLayer(string name, int neurons) : base(name)
+            public DenseLayer(string name, BaseActivationFunction actFunc, int neurons ) : base(name,actFunc)
             {
                 // Constructor Method for Dense layer
-                this.layerType = "Dense";
+                this.layerType = "Dense-Layer";
                 this.neurons = neurons;
+            }
 
+            public new void InitLayer()
+            {
+                // Initialize Layer, Generate Needed Shapes & Arrays
+                WeightShape = new int[] { neurons, InputShape[0] };
+                BiasShape = new int[] { neurons, 1 };
+                OutputShape = new int[] { neurons, 1 };
+            }
+
+            public new double[,] CallLayer (double[,] X)
+            {
+                // Call Dense Layer w/ Input X
+                return LinearAlgebra.MatrixProduct(W, X);
             }
         }
 
-        class ActivationLayer : BaseLayer
+        public class ActivationLayer : BaseLayer
         {
             // Activation Function Layer
-        }
 
+            public ActivationLayer(string name, BaseActivationFunction actFunc) : base(name, actFunc)
+            {
+                // Constructor for Activation Layer
+                this.layerType = "Activation-Layer";
+                               
+            }
+        }
     }
 }

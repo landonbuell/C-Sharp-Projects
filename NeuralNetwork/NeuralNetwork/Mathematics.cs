@@ -45,6 +45,18 @@ namespace NeuralNetwork
                         B[i, j] = A[j, i];
                 return B;
             }
+
+            public static double[,] ElementSubtract(double[,] A, double[,] B)
+            {
+                // Perform Element-wise subtraction A - B
+                Debug.Assert(A.GetLength(0) == B.GetLength(0));
+                Debug.Assert(A.GetLength(1) == B.GetLength(1));
+                double[,] C = new double[A.GetLength(0), A.GetLength(1)];
+                for (int i = 0; i < A.GetLength(0); i++)
+                    for (int j = 0; j < A.GetLength(1); j++)
+                        C[i, j] = (A[i, j] - B[i, j]);
+                return C;
+            }
         }
     
 
@@ -106,35 +118,5 @@ namespace NeuralNetwork
                 return C;
             }
         }
-
-        public class BaseActivationFunction
-        {
-            // Parent Activation Function Class
-            public int[,] shape;
-
-            public double[,] CallFunc( double [,] X)
-            {
-                // Call this Activation Function
-                return X;
-            }
-
-            public double CallDeriv (double[,] X)
-            {
-                // Call this Activation Function Derivative
-                return 1.0;
-            }
-
-        }
-
-        public class IdentityActivationFunction : BaseActivationFunction
-        {
-            // Identity ActivatioN Function
-
-            
-
-            private IdentityActivationFunction
-        }
-
-    }
-    
+    }    
 }

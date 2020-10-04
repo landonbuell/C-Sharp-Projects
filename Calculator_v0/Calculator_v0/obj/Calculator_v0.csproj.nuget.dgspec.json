@@ -1,18 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Landon\\Documents\\GitHub\\Buell-CS410C\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj": {}
+    "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Landon\\Documents\\GitHub\\Buell-CS410C\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj": {
+    "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Landon\\Documents\\GitHub\\Buell-CS410C\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj",
+        "projectUniqueName": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj",
         "projectName": "Calculator_v0",
-        "projectPath": "C:\\Users\\Landon\\Documents\\GitHub\\Buell-CS410C\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj",
+        "projectPath": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Calculator_v0\\Calculator_v0\\Calculator_v0.csproj",
         "packagesPath": "C:\\Users\\Landon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Landon\\Documents\\GitHub\\Buell-CS410C\\Calculator_v0\\Calculator_v0\\obj\\",
+        "outputPath": "C:\\Users\\Landon\\Documents\\GitHub\\C-Sharp-Projects\\Calculator_v0\\Calculator_v0\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Landon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -47,18 +50,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

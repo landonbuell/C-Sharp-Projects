@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30128.74
+VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultibodySimulation", "MultibodySimulation\MultibodySimulation.csproj", "{3B586EB3-0E1F-4355-83DE-73D182ABF121}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultibodySimulation", "MultibodySimulation\MultibodySimulation.csproj", "{4F845A6D-0701-44C0-B583-8B31B824A12F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B586EB3-0E1F-4355-83DE-73D182ABF121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B586EB3-0E1F-4355-83DE-73D182ABF121}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B586EB3-0E1F-4355-83DE-73D182ABF121}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B586EB3-0E1F-4355-83DE-73D182ABF121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F845A6D-0701-44C0-B583-8B31B824A12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F845A6D-0701-44C0-B583-8B31B824A12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F845A6D-0701-44C0-B583-8B31B824A12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F845A6D-0701-44C0-B583-8B31B824A12F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3D96EE8C-C2CD-4347-8A4F-4EF6462A77C2}
+		SolutionGuid = {67BB6A73-A3DF-4C43-81F5-41C2436F2212}
 	EndGlobalSection
 EndGlobal
